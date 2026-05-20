@@ -99,7 +99,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-white/70">
             <li className="flex gap-2">
               <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-              Ahmedabad, Gujarat, India
+509,Hilltown Impressa, Opp.Parikh Hospital, Nikol, Ahmedabad, India 380049
             </li>
 
             <li className="flex gap-2">

@@ -35,12 +35,12 @@ const FILTERS = ["All", "Residential", "Commercial", "Premium", "New Launch", "R
 type Filter = (typeof FILTERS)[number];
 
 const projects = [
- { img: p1, title: "Aryaman Kishkindha ", location: "Narol, Ahmedabad",  price: "₹23 L onwards",  beds: 1, baths: 3, area: "1850 sq.ft",     tag: "New Launch" },
-  { img: p2, title: "Aryaman Ayodhyapuri ",   location: "Narol, Ahmedabad",       price: "₹32 L",         beds: 2 & 3, baths: 5, area: "3200 sq.ft",     tag: "Premium"    },
+ { img: p1, title: "Aryaman Kishkindha ", location: "Narol, Ahmedabad",  price: "₹23 Lacs ",  beds: 1, baths: 3, area: "1850 sq.ft",     tag: "New Launch" },
+  { img: p2, title: "Aryaman Ayodhyapuri ",   location: "Narol, Ahmedabad",       price: "₹32 Lacs",         beds: 2 & 3, baths: 5, area: "3200 sq.ft",     tag: "Premium"    },
   { img: p3, title: "Harmony 71",   location: "Lambha, Ahmedabad",           price: "₹1 Cr",         beds: 4, baths: 2, area: "1200 sq.ft",     tag: "Commercial" },
-  { img: p4, title: "Radhe Shyam Heritage",     location: "Lambha, Ahmedabad",       price: "₹39 L onwards",  beds:  2 & 3, baths: 0, area: "1500–4000 sq.ft", tag: "Premium"       },
+  { img: p4, title: "Radhe Shyam Heritage",     location: "Lambha, Ahmedabad",       price: "₹39 Lacs ",  beds:  2 & 3, baths: 0, area: "1500–4000 sq.ft", tag: "Premium"       },
   { img: p5, title: "Nest Heights",         location: "Bopal, Ahmedabad",   price: "₹1.6 Cr",          beds: 4, baths: 4, area: "2400 sq.ft",      tag: "Ready to Move" as Filter, tagColor: "bg-violet-500" },
-  { img: p6, title: "Vasudha Residency",    location: "Thaltej, Ahmedabad", price: "₹95 L",            beds: 3, baths: 3, area: "1950 sq.ft",      tag: "Premium"       as Filter, tagColor: "bg-amber-500"  },
+  { img: p6, title: "Vasudha Residency",    location: "Thaltej, Ahmedabad", price: "₹95 Lacs",            beds: 3, baths: 3, area: "1950 sq.ft",      tag: "Premium"       as Filter, tagColor: "bg-amber-500"  },
 ];
 
 /* ── fires once when element enters viewport ── */

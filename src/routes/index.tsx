@@ -88,10 +88,10 @@ const whyUs = [
 ];
 
 const properties = [
-  { img: p1, title: "Aryaman Kishkindha ", location: "Narol, Ahmedabad",  price: "₹23 L ",  beds: 1, baths: 3, area: "1850 sq.ft",     tag: "New Launch" },
-  { img: p2, title: "Aryaman Ayodhyapuri ",   location: "Narol, Ahmedabad",       price: "₹32 L",         beds: 2 & 3, baths: 5, area: "3200 sq.ft",     tag: "Premium"    },
+  { img: p1, title: "Aryaman Kishkindha ", location: "Narol, Ahmedabad",  price: "₹23 Lacs ",  beds: 1, baths: 3, area: "1850 sq.ft",     tag: "New Launch" },
+  { img: p2, title: "Aryaman Ayodhyapuri ",   location: "Narol, Ahmedabad",       price: "₹32 Lacs",         beds: 2 & 3, baths: 5, area: "3200 sq.ft",     tag: "Premium"    },
   { img: p3, title: "Harmony 71",   location: "Lambha, Ahmedabad",           price: "₹1 Cr",         beds: 4, baths: 2, area: "1200 sq.ft",     tag: "Commercial" },
-  { img: p4, title: "Radhe Shyam Heritage",     location: "Lambha, Ahmedabad",       price: "₹39 L ",  beds:  2 & 3, baths: 0, area: "1500–4000 sq.ft", tag: "Premium"       },
+  { img: p4, title: "Radhe Shyam Heritage",     location: "Lambha, Ahmedabad",       price: "₹39 Lacs ",  beds:  2 & 3, baths: 0, area: "1500–4000 sq.ft", tag: "Premium"       },
 ];
 
 const testimonials = [
@@ -584,7 +584,7 @@ export function ContactSection() {
             </p>
             <div className="mt-8 space-y-3 text-sm text-white/80">
               {[
-                ["📍", "Ahmedabad, Gujarat, India"],
+                ["📍", "509,Hilltown Impressa, Opp.Parikh Hospital, Nikol, Ahmedabad, India 380049"],
                 ["📞", "+91 98765 43210"],
                 ["✉️", "hello@thenestrealty.in"],
               ].map(([icon, text], i) => (
