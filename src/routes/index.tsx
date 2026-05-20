@@ -88,10 +88,10 @@ const whyUs = [
 ];
 
 const properties = [
-  { img: p1, title: "Aryaman Kishkindha ", location: "Narol, Ahmedabad",  price: "₹23 L onwards",  beds: 3, baths: 3, area: "1850 sq.ft",     tag: "New Launch" },
-  { img: p2, title: "Aryaman Ayodhyapuri ",   location: "Narol, Ahmedabad",       price: "₹26 L",         beds: 4, baths: 5, area: "3200 sq.ft",     tag: "Premium"    },
-  { img: p3, title: "Harmony 71",   location: "Lambha, Ahmedabad",           price: "₹1.5 Cr",         beds: 0, baths: 2, area: "1200 sq.ft",     tag: "Commercial" },
-  { img: p4, title: "Radhe Shyam Heritage",     location: "Lambha, Ahmedabad",       price: "₹39 L onwards",  beds: 0, baths: 0, area: "1500–4000 sq.ft", tag: "Premium"       },
+  { img: p1, title: "Aryaman Kishkindha ", location: "Narol, Ahmedabad",  price: "₹23 L ",  beds: 1, baths: 3, area: "1850 sq.ft",     tag: "New Launch" },
+  { img: p2, title: "Aryaman Ayodhyapuri ",   location: "Narol, Ahmedabad",       price: "₹32 L",         beds: 2 & 3, baths: 5, area: "3200 sq.ft",     tag: "Premium"    },
+  { img: p3, title: "Harmony 71",   location: "Lambha, Ahmedabad",           price: "₹1 Cr",         beds: 4, baths: 2, area: "1200 sq.ft",     tag: "Commercial" },
+  { img: p4, title: "Radhe Shyam Heritage",     location: "Lambha, Ahmedabad",       price: "₹39 L ",  beds:  2 & 3, baths: 0, area: "1500–4000 sq.ft", tag: "Premium"       },
 ];
 
 const testimonials = [
@@ -419,9 +419,9 @@ function HomePage() {
                       className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     {/* Tag slides in on hover */}
-                    <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full">
+                    {/* <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full">
                       {p.tag}
-                    </span>
+                    </span> */}
                     {/* Overlay on hover */}
                     <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
@@ -429,8 +429,8 @@ function HomePage() {
                     <h3 className="font-semibold text-lg">{p.title}</h3>
                     <p className="text-sm text-muted-foreground">{p.location}</p>
                     <div className="mt-3 flex gap-4 text-xs text-muted-foreground">
-                      {p.beds > 0  && <span className="flex items-center gap-1"><Bed     className="h-3.5 w-3.5" /> {p.beds} BHK</span>}
-                      {p.baths > 0 && <span className="flex items-center gap-1"><Bath    className="h-3.5 w-3.5" /> {p.baths}</span>}
+                      {p.beds > 0  && <span className="flex items-center gap-1"> {p.beds} BHK</span>}
+                      {/* {p.baths > 0 && <span className="flex items-center gap-1"><Bath    className="h-3.5 w-3.5" /> {p.baths}</span>} */}
                       <span              className="flex items-center gap-1"><Maximize className="h-3.5 w-3.5" /> {p.area}</span>
                     </div>
                     <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">

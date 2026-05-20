@@ -35,10 +35,10 @@ const FILTERS = ["All", "Residential", "Commercial", "Premium", "New Launch", "R
 type Filter = (typeof FILTERS)[number];
 
 const projects = [
-  { img: p1, title: "Aryaman Kishkindha",   location: "Narol, Ahmedabad",   price: "₹23 L onwards",    beds: 3, baths: 3, area: "1850 sq.ft",      tag: "New Launch"    as Filter, tagColor: "bg-emerald-500" },
-  { img: p2, title: "Aryaman Ayodhyapuri",  location: "Narol, Ahmedabad",   price: "₹26 L",            beds: 4, baths: 5, area: "3200 sq.ft",      tag: "Premium"       as Filter, tagColor: "bg-amber-500"  },
-  { img: p3, title: "Harmony 71",           location: "Lambha, Ahmedabad",  price: "₹1.5 Cr",          beds: 0, baths: 2, area: "1200 sq.ft",      tag: "Commercial"    as Filter, tagColor: "bg-sky-500"    },
-  { img: p4, title: "Radhe Shyam Heritage", location: "Lambha, Ahmedabad",  price: "₹39 L onwards",    beds: 0, baths: 0, area: "1500–4000 sq.ft", tag: "Premium"       as Filter, tagColor: "bg-amber-500"  },
+ { img: p1, title: "Aryaman Kishkindha ", location: "Narol, Ahmedabad",  price: "₹23 L onwards",  beds: 1, baths: 3, area: "1850 sq.ft",     tag: "New Launch" },
+  { img: p2, title: "Aryaman Ayodhyapuri ",   location: "Narol, Ahmedabad",       price: "₹32 L",         beds: 2 & 3, baths: 5, area: "3200 sq.ft",     tag: "Premium"    },
+  { img: p3, title: "Harmony 71",   location: "Lambha, Ahmedabad",           price: "₹1 Cr",         beds: 4, baths: 2, area: "1200 sq.ft",     tag: "Commercial" },
+  { img: p4, title: "Radhe Shyam Heritage",     location: "Lambha, Ahmedabad",       price: "₹39 L onwards",  beds:  2 & 3, baths: 0, area: "1500–4000 sq.ft", tag: "Premium"       },
   { img: p5, title: "Nest Heights",         location: "Bopal, Ahmedabad",   price: "₹1.6 Cr",          beds: 4, baths: 4, area: "2400 sq.ft",      tag: "Ready to Move" as Filter, tagColor: "bg-violet-500" },
   { img: p6, title: "Vasudha Residency",    location: "Thaltej, Ahmedabad", price: "₹95 L",            beds: 3, baths: 3, area: "1950 sq.ft",      tag: "Premium"       as Filter, tagColor: "bg-amber-500"  },
 ];
@@ -220,7 +220,7 @@ function Projects() {
                   ...fu(0.22),
                 }}
               >
-                <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 6 }}>
+                {/* <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 6 }}>
                   {FILTERS.map((f) => {
                     const isActive = f === active;
                     const count    = f === "All" ? projects.length : projects.filter((p) => p.tag === f).length;
@@ -250,7 +250,7 @@ function Projects() {
                       </button>
                     );
                   })}
-                </div>
+                </div> */}
 
                 {/* result count */}
                 <span style={{ fontSize: 11, color: C.muted, flexShrink: 0 }}>
@@ -339,7 +339,7 @@ function ProjectCard({
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(28,22,16,0.65) 0%, transparent 55%)" }} />
 
         {/* tag */}
-        <span
+        {/* <span
           className={`${p.tagColor} text-white`}
           style={{
             position:      "absolute",
@@ -354,7 +354,7 @@ function ProjectCard({
           }}
         >
           {p.tag}
-        </span>
+        </span> */}
 
         {/* price pill */}
         <span
@@ -394,11 +394,11 @@ function ProjectCard({
               <Bed style={{ width: 11, height: 11 }} /> {p.beds} BHK
             </span>
           )}
-          {p.baths > 0 && (
+          {/* {p.baths > 0 && (
             <span style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, color: C.muted, backgroundColor: C.cream, border: `1px solid ${C.bdr}`, borderRadius: 4, padding: "3px 10px" }}>
               <Bath style={{ width: 11, height: 11 }} /> {p.baths} Bath
             </span>
-          )}
+          )} */}
           <span style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, color: C.muted, backgroundColor: C.cream, border: `1px solid ${C.bdr}`, borderRadius: 4, padding: "3px 10px" }}>
             <Maximize style={{ width: 11, height: 11 }} /> {p.area}
           </span>
