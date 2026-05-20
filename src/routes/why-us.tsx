@@ -134,7 +134,7 @@ function WhyUs() {
               { value: 15,   suffix: "+",  label: "Years in Ahmedabad real estate" },
               { value: 1200, suffix: "+",  label: "Families & investors served" },
               { value: 94,   suffix: "%",  label: "Client referral rate" },
-              { value: 3,    suffix: " cities", label: "Across Gujarat's key markets" },
+          
             ].map((stat, i) => (
               <div
                 key={stat.label}
