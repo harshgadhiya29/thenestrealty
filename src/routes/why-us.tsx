@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Award, BookOpen, Users, ShieldCheck, Sparkles, Globe2, Clock, ThumbsUp } from "lucide-react";
+import { Award, BookOpen, Users, ShieldCheck, Sparkles, Globe2, Clock, ThumbsUp, Headphones } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
+import whyus from "@/assets/why-us.png";
+import whycta from "@/assets/whyus-cta.png";
+
 
 export const Route = createFileRoute("/why-us")({
   head: () => ({
@@ -20,10 +23,10 @@ const reasons = [
   { icon: BookOpen,   title: "Deep Market Knowledge",   desc: "Hyper-local insights on micro-markets, pricing trends and upcoming infrastructure." },
   { icon: Users,      title: "Professional Team",       desc: "RERA-aware advisors who treat every brief like their own." },
   { icon: ShieldCheck,title: "Transparent Deals",       desc: "Honest pricing, clear paperwork, zero hidden surprises." },
-  { icon: Sparkles,   title: "Curated Inventory",       desc: "We only put forward properties we'd recommend to our own family." },
-  { icon: Globe2,     title: "NRI-Friendly",            desc: "Remote-first process with secure documentation and trusted on-ground support." },
-  { icon: Clock,      title: "Fast Turnaround",         desc: "Tight response times, organised follow-ups, and no time wasted." },
-  { icon: ThumbsUp,   title: "Long-Term Relationships", desc: "Most of our business comes from referrals — and that says it all." },
+  { icon: Sparkles,   title: "Sales Execution",       desc: "Complete sales coordination from lead handling to site visits and final closures." },
+  { icon: Globe2,     title: "Channel Partner Network",            desc: "Strong broker and partner connections that expand project exposure and sales opportunities." },
+  { icon: Clock,      title: "Strategic Marketing",         desc: "Data-driven marketing strategies designed to improve visibility, engagement and project reach." },
+  { icon: Headphones,   title: "After Sales Services", desc: "From documentation support to resale, rental and property assistance — we stay connected with our clients even after the deal is done." },
 ];
 
 /* ── tiny hook: fires when element enters viewport ── */
@@ -67,100 +70,123 @@ function WhyUs() {
       {/* ════════════════════════════════════
           HERO — split editorial layout
       ════════════════════════════════════ */}
-      <section className="relative overflow-hidden bg-background">
-        {/* diagonal accent stripe */}
+<section className="relative overflow-hidden bg-background">
+  {/* FULL BACKGROUND IMAGE */}
+  <div className="absolute inset-0">
+    <img
+      src={whyus}
+      alt="The Nest Realty"
+      className="w-full h-full object-cover"
+    />
+
+    {/* dark + golden overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-background via-background/35 to-background/10" />
+
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(135deg, hsl(var(--primary)/0.10) 0%, transparent 55%)",
+      }}
+    />
+  </div>
+
+  {/* TOP BORDER */}
+  <div className="container-x relative z-10 pt-8">
+    <div className="h-px w-full bg-white/10" />
+  </div>
+
+  {/* HERO CONTENT */}
+  <div className="container-x relative z-10 min-h-[760px] flex items-center">
+    <div className="max-w-[620px] py-20">
+      
+      {/* SMALL LABEL */}
+      <p className="text-xs tracking-[0.25em] uppercase text-primary font-semibold mb-6">
+        The Nest Realty · Est. 2009
+      </p>
+
+      {/* HEADING */}
+      <h1
+        className="font-bold text-balck leading-[1.02]"
+        style={{
+          fontSize: "clamp(3rem, 6vw, 5rem)",
+        }}
+      >
+        Why Developers
+        <br />
+        Choose
+        <br />
+        <span className="text-primary">The Nest Realty</span>
+      </h1>
+
+      {/* divider */}
+      <div className="mt-7 h-px w-16 bg-primary" />
+
+      {/* DESCRIPTION */}
+      <p className="mt-6 max-w-xl text-black/75 leading-relaxed text-base">
+        We partner with developers to plan, market and sell projects the
+        right way — with transparency, strategy and commitment at every
+        step.
+      </p>
+
+      {/* BUTTONS */}
+      <div className="flex flex-wrap gap-4 mt-8">
+        <button className="h-12 px-6 rounded-xl bg-primary text-primary-foreground font-medium shadow-lg hover:opacity-90 transition">
+          Explore Projects →
+        </button>
+
+        <button className="h-12 px-6 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md text-black hover:bg-white/20 transition font-medium">
+          Get Quotation →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {/* FLOATING STATS BAR */}
+  <div className="container-x relative z-20 -mt-24 pb-10">
+    <div className="grid grid-cols-2 lg:grid-cols-6 rounded-[2rem] overflow-hidden border border-white/10 bg-white/90 backdrop-blur-xl shadow-2xl">
+      {[
+        {
+          value: "11+",
+          label: "Years in Ahmedabad real estate",
+        },
+        {
+          value: "1,100+",
+          label: "Happy Families",
+        },
+        {
+          value: "950+",
+          label: "Homes Delivered",
+        },
+        {
+          value: "50,000+",
+          label: "Leads Generated",
+        },
+        {
+          value: "12,000+",
+          label: "Site Visits Generated",
+        },
+        {
+          value: "365 Days",
+          label: "365 Deals Our Milestone",
+        },
+      ].map((item, i) => (
         <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(135deg, hsl(var(--primary)/0.06) 0%, transparent 55%)",
-          }}
-        />
-        {/* top rule */}
-        <div className="container-x pt-10 pb-0">
-          <div className="h-px w-full bg-border" />
+          key={i}
+          className="relative px-6 py-7 text-center border-b lg:border-b-0 lg:border-r border-black/5 last:border-r-0"
+        >
+          <h3 className="text-2xl lg:text-3xl font-bold text-primary">
+            {item.value}
+          </h3>
+
+          <p className="mt-2 text-sm leading-snug text-muted-foreground">
+            {item.label}
+          </p>
         </div>
-
-        <div className="container-x grid lg:grid-cols-2 gap-0 min-h-[560px] items-stretch">
-          {/* LEFT: large typographic statement */}
-          <div
-            className="flex flex-col justify-center py-20 pr-0 lg:pr-16 border-r-0 lg:border-r border-border"
-            style={{ animation: "fadeSlideUp 0.7s ease both" }}
-          >
-            <p
-              className="text-xs tracking-[0.25em] uppercase text-primary font-semibold mb-6"
-              style={{ animation: "fadeSlideUp 0.6s ease both" }}
-            >
-              The Nest Realty · Est. 2009
-            </p>
-
-            <h1
-              className="font-bold leading-[1.05] text-foreground"
-              style={{
-                fontSize: "clamp(2.4rem, 5.5vw, 4.2rem)",
-                animation: "fadeSlideUp 0.75s 0.1s ease both",
-              }}
-            >
-              Why families
-              <br />
-              <span className="text-primary">trust us</span>
-              <br />
-              with their
-              <br />
-              biggest move.
-            </h1>
-
-            <div
-              className="mt-8 h-px w-16 bg-primary"
-              style={{ animation: "expandWidth 0.8s 0.4s ease both" }}
-            />
-
-            <p
-              className="mt-6 text-muted-foreground text-base leading-relaxed max-w-md"
-              style={{ animation: "fadeSlideUp 0.75s 0.3s ease both" }}
-            >
-              Eight reasons families, investors and NRIs keep coming back — and
-              recommending us to people they care about.
-            </p>
-          </div>
-
-          {/* RIGHT: stat tiles stacked */}
-          <div
-            className="flex flex-col justify-center py-20 pl-0 lg:pl-16 gap-0"
-            style={{ animation: "fadeSlideUp 0.8s 0.2s ease both" }}
-          >
-            {[
-              { value: 15,   suffix: "+",  label: "Years in Ahmedabad real estate" },
-              { value: 1200, suffix: "+",  label: "Families & investors served" },
-              { value: 94,   suffix: "%",  label: "Client referral rate" },
-          
-            ].map((stat, i) => (
-              <div
-                key={stat.label}
-                className="group flex items-center gap-6 py-7 border-b border-border last:border-b-0 hover:pl-2 transition-all duration-300"
-                style={{ animation: `fadeSlideUp 0.7s ${0.2 + i * 0.1}s ease both` }}
-              >
-                <span
-                  className="text-primary font-bold tabular-nums shrink-0"
-                  style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", lineHeight: 1 }}
-                >
-                  <Counter target={stat.value} suffix={stat.suffix} />
-                </span>
-                <span className="text-sm text-muted-foreground leading-snug">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* bottom rule */}
-        <div className="container-x">
-          <div className="h-px w-full bg-border" />
-        </div>
-      </section>
-
+      ))}
+    </div>
+  </div>
+</section>
       {/* ════════════════════════════════════
           REASONS GRID
       ════════════════════════════════════ */}
@@ -257,30 +283,74 @@ function ReasonGrid() {
 function CtaStrip() {
   const { ref, visible } = useInView(0.3);
   return (
-    <section
-      ref={ref}
-      className="py-20 border-t border-border"
-      style={visible ? { animation: "fadeSlideUp 0.7s ease both" } : { opacity: 0 }}
-    >
-      <div className="container-x flex flex-col md:flex-row items-center justify-between gap-8">
-        <div>
-          <p className="text-xs tracking-[0.2em] uppercase text-primary font-semibold mb-2">
+ <section
+  ref={ref}
+  className="py-16"
+  style={visible ? { animation: "fadeSlideUp 0.7s ease both" } : { opacity: 0 }}
+>
+  <div className="container-x">
+    <div className="relative overflow-hidden rounded-[2rem] border border-border min-h-[320px] lg:min-h-[360px]">
+      
+      {/* BACKGROUND IMAGE */}
+      <img
+        src={whycta}
+        alt="Luxury interior"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* LEFT LIGHT OVERLAY */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#f7f2eb] via-[#f7f2eb]/30 to-transparent" />
+
+      {/* SOFT GOLD OVERLAY */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(135deg, hsl(var(--primary)/0.08) 0%, transparent 60%)",
+        }}
+      />
+
+      {/* CONTENT */}
+      <div className="relative z-10 flex items-center h-full">
+        <div className="max-w-[520px] px-8 py-10 md:px-14 md:py-8">
+          
+          {/* SMALL LABEL */}
+          <p className="text-xs tracking-[0.25em] uppercase text-primary font-semibold mb-4">
             Ready to begin?
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-            Let's find your perfect property.
+
+          {/* TITLE */}
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-[1.05]">
+            Let’s find your
+            <br />
+            perfect property.
           </h2>
+
+          {/* DESCRIPTION */}
+          <p className="mt-5 text-muted-foreground leading-relaxed max-w-md text-sm md:text-base">
+            Partner with experts who understand your goals
+            and deliver results.
+          </p>
+
+          {/* BUTTON */}
+          <div className="mt-7">
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl
+                         bg-primary text-primary-foreground
+                         font-medium text-sm shadow-lg
+                         hover:opacity-90 hover:translate-y-[-2px]
+                         transition-all duration-300"
+            >
+              Talk to an advisor
+              <span className="text-lg">→</span>
+            </a>
+          </div>
         </div>
-        <a
-          href="/contact"
-          className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-primary-foreground
-                     font-semibold text-sm tracking-wide hover:opacity-90 hover:scale-[1.03]
-                     transition-all duration-200 shadow-md whitespace-nowrap"
-        >
-          Talk to an advisor →
-        </a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 }
 

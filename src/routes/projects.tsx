@@ -1,22 +1,47 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Bed, Bath, Maximize, MapPin, ArrowUpRight } from "lucide-react";
+import { Bed, Maximize, MapPin, ArrowUpRight, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
-import p1 from "@/assets/KISHKINDHA.jpg";
+import ki from "@/assets/KISHKINDHA.jpg";
+import ki1 from "@/assets/KISHKINDHA 1.jpg";
+
 import p2 from "@/assets/AYODHYAPURI.jpg";
 import p3 from "@/assets/harmony.jpg";
 import p4 from "@/assets/RadheShyam.jpeg";
 import p5 from "@/assets/property-1.jpg";
 import p6 from "@/assets/property-2.jpg";
-/* ─── Brand tokens — matches About Us palette exactly ─── */
+import a1 from "@/assets/Aqua1.jpg";
+import a2 from "@/assets/Aqua2.jpg";
+import ar1 from "@/assets/ar1.jpg";
+import ar2 from "@/assets/ar2.jpg";
+import aa1 from "@/assets/AYODHYAPURI.jpg";
+import aa2 from "@/assets/AYODHYAPURI1.jpg";
+import h from "@/assets/harmony.jpg";
+import h1 from "@/assets/harmony2.jpeg";
+import kv from "@/assets/kv.jpeg";
+import kv1 from "@/assets/kv1.jpeg";
+import ak from "@/assets/ak.jpg";
+import ak1 from "@/assets/ak1.jpg";
+import ak3 from "@/assets/ak3.jpg";
+import k from "@/assets/k.jpg";
+import k1 from "@/assets/k1.jpg";
+import ph from "@/assets/ph.jpg";
+import ph1 from "@/assets/ph1.jpg";
+import rh from "@/assets/rh.jpg";
+import rh1 from "@/assets/rh1.jpg";
+import s from "@/assets/s.jpg";
+import s1 from "@/assets/s1.jpg";
+import tntc from "@/assets/tntc.jpg";
+import tntc1 from "@/assets/tntc1.jpg";
+
+/* ─── Brand tokens ─── */
 const C = {
-  gold:   "#8B6914",
-  goldL:  "#c9a96e",
-  dark:   "#1c1610",
-  cream:  "#f7f3ee",
-  cream2: "#ede8e0",
-  muted:  "#9a8464",
-  bdr:    "#ddd3c0",
+  gold:  "#8B6914",
+  goldL: "#c9a96e",
+  dark:  "#1c1610",
+  cream: "#f7f3ee",
+  muted: "#9a8464",
+  bdr:   "#ddd3c0",
 } as const;
 
 export const Route = createFileRoute("/projects")({
@@ -34,13 +59,144 @@ export const Route = createFileRoute("/projects")({
 const FILTERS = ["All", "Residential", "Commercial", "Premium", "New Launch", "Ready to Move"] as const;
 type Filter = (typeof FILTERS)[number];
 
-const projects = [
- { img: p1, title: "Aryaman Kishkindha ", location: "Narol, Ahmedabad",  price: "₹23 Lacs ",  beds: 1, baths: 3, area: "1850 sq.ft",     tag: "New Launch" },
-  { img: p2, title: "Aryaman Ayodhyapuri ",   location: "Narol, Ahmedabad",       price: "₹32 Lacs",         beds: 2 & 3, baths: 5, area: "3200 sq.ft",     tag: "Premium"    },
-  { img: p3, title: "Harmony 71",   location: "Lambha, Ahmedabad",           price: "₹1 Cr",         beds: 4, baths: 2, area: "1200 sq.ft",     tag: "Commercial" },
-  { img: p4, title: "Radhe Shyam Heritage",     location: "Lambha, Ahmedabad",       price: "₹39 Lacs ",  beds:  2 & 3, baths: 0, area: "1500–4000 sq.ft", tag: "Premium"       },
-  { img: p5, title: "Nest Heights",         location: "Bopal, Ahmedabad",   price: "₹1.6 Cr",          beds: 4, baths: 4, area: "2400 sq.ft",      tag: "Ready to Move" as Filter, tagColor: "bg-violet-500" },
-  { img: p6, title: "Vasudha Residency",    location: "Thaltej, Ahmedabad", price: "₹95 Lacs",            beds: 3, baths: 3, area: "1950 sq.ft",      tag: "Premium"       as Filter, tagColor: "bg-amber-500"  },
+type Project = {
+  imgs:     string[];
+  title:    string;
+  location: string;
+  contact:  string[];
+  specs:    { label: string; sizes: string }[];
+  tag:      Filter;
+};
+
+const projects: Project[] = [
+  {
+    imgs:     [ak, ak1, ak3],
+    title:    "Aryaman Kalpvruksh",
+    location: "Hathijan, Gujarat",
+    contact:  ["9925006434"],
+    specs: [
+      { label: "2 BHK Flats",  sizes: "142, 146, 148, 160 Sq.Yd" },
+      { label: "3 BHK Flats",  sizes: "190, 210 Sq.Yd" },
+      { label: "Shops",        sizes: "600 – 3670 Sq.Ft" },
+    ],
+    tag: "New Launch",
+  },
+  {
+    imgs:     [s, s1],
+    title:    "Sahitya Nest",
+    location: "Vastral, Ahmedabad, Gujarat",
+    contact:  ["8200010914"],
+    specs: [
+      { label: "2 BHK Flats", sizes: "174 Sq.Yd" },
+    ],
+    tag: "Residential",
+  },
+  {
+    imgs:     [p4, rh, rh1],
+    title:    "Radhe Shyam Heritage",
+    location: "Lambha, Ahmedabad",
+    contact:  ["9998115571", "9998115581"],
+    specs: [
+      { label: "2 BHK Flats", sizes: "150 Sq.Yd" },
+      { label: "3 BHK Flats", sizes: "215 Sq.Yd" },
+      { label: "Shops",       sizes: "269 – 2098 Sq.Ft" },
+    ],
+    tag: "Premium",
+  },
+  {
+    imgs:     [ki, p2, ki1],
+    title:    "Aryaman Kishkindha",
+    location: "Narol, Ahmedabad, Gujarat ",
+    contact:  ["9925008300", "9925008400"],
+    specs: [
+      { label: "1 BHK Flats", sizes: "89, 92, 96 Sq.Yd" },
+    ],
+    tag: "New Launch",
+  },
+  {
+    imgs:     [aa1, aa2, ],
+    title:    "Aryaman Ayodhyapuri ",
+    location: "Narol, Ahmedabad, Gujarat",
+    contact:  ["9925008300", "9925008400"],
+    specs: [
+      { label: "1 BHK Flats", sizes: "96 Sq.Yd" },
+      { label: "2 BHK Flats", sizes: "129, 138, 145 Sq.Yd" },
+      { label: "3 BHK Flats", sizes: "196 Sq.Yd" },
+    ],
+    tag: "Premium",
+  },
+  {
+    imgs:     [a1, a2],
+    title:    "Aqua Green City",
+    location: "Ahmedabad, Gujarat",
+    contact:  ["7096950550"],
+    specs: [
+      { label: "2 BHK Flats", sizes: "134, 140 Sq.Yd" },
+      { label: "Shops",       sizes: "292 – 988 Sq.Ft" },
+    ],
+    tag: "New Launch",
+  },
+  {
+    imgs:     [k, k1],
+    title:    "Keystone 30",
+    location: "New, Vastral, Ahmedabad, Gujarat",
+    contact:  ["9624293030"],
+    specs: [
+      { label: "4 BHK Bungalows", sizes: "Plot 124–228 Sq.Yd · Build 300 Sq.Yd" },
+    ],
+    tag: "Premium",
+  },
+  {
+    imgs:     [ph, ph1],
+    title:    "Prarthana Homes",
+    location: "New, Vastral, Ahmedabad, Gujarat",
+    contact:  ["9925003055"],
+    specs: [
+      { label: "4 BHK Bungalows", sizes: "Plot 86–134 Sq.Yd · Build 166 Sq.Yd" },
+    ],
+    tag: "Residential",
+  },
+  {
+    imgs:     [kv, kv1],
+    title:    "Kahan Villa",
+    location: "Ahmedabad, Gujarat",
+    contact:  ["9925001037"],
+    specs: [
+      { label: "4 BHK Bungalows", sizes: "Plot 99–125 Sq.Yd · Build 180 Sq.Yd · G+2" },
+    ],
+    tag: "Premium",
+  },
+  {
+    imgs:     [ar1, ar2],
+    title:    "Aryaman Residency",
+    location: "Vatva, Ahmedabad, Gujarat",
+    contact:  ["9313213944"],
+    specs: [
+      { label: "2 BHK Flats", sizes: "136 Sq.Yd" },
+      { label: "Shops",       sizes: "448 – 758 Sq.Ft" },
+    ],
+    tag: "Residential",
+  },
+  {
+    imgs:     [tntc, tntc1],
+    title:    "The Nikol Trade Center",
+    location: "Nikol, Ahmedabad, Gujarat",
+    contact:  ["9313700464", "8485909112"],
+    specs: [
+      { label: "Shops", sizes: "216 – 3481 Sq.Ft" },
+    ],
+    tag: "Commercial",
+  },
+  {
+    imgs:     [h, h1],
+    title:    "Harmony 71",
+    location: "Lambha, Ahmedabad, Gujarat ",
+    contact:  ["9925062394"],
+    specs: [
+      { label: "4 BHK Bungalows", sizes: "Plot 65.50–173 Sq.Yd · Build 165–203 Sq.Yd" },
+    ],
+    tag: "Commercial",
+  },
 ];
 
 /* ── fires once when element enters viewport ── */
@@ -75,7 +231,6 @@ function Projects() {
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.tag === active);
 
-  /* staggered fade-up */
   const fu = (d: number): React.CSSProperties => ({
     opacity:    show ? 1 : 0,
     transform:  show ? "translateY(0)" : "translateY(16px)",
@@ -85,15 +240,12 @@ function Projects() {
   return (
     <PageLayout>
 
-      {/* ════════════════════════════════════════════
-          HERO — Option D
-          Dark stamp panel LEFT  +  gold-border content RIGHT
-      ════════════════════════════════════════════ */}
+      {/* ── HERO ── */}
       <section style={{ backgroundColor: "#fff", borderBottom: `1px solid ${C.bdr}` }}>
         <div className="container-x">
           <div style={{ display: "flex", minHeight: 240 }}>
 
-            {/* ── LEFT: dark stamp panel ── */}
+            {/* LEFT dark stamp */}
             <div
               className="hidden sm:flex"
               style={{
@@ -108,166 +260,55 @@ function Projects() {
                 ...fu(0),
               }}
             >
-              {/* project number */}
-              <span
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize:   64,
-                  fontWeight: 700,
-                  color:      C.goldL,
-                  lineHeight: 1,
-                }}
-              >
+              <span style={{ fontFamily: "Georgia, serif", fontSize: 64, fontWeight: 700, color: C.goldL, lineHeight: 1 }}>
                 {String(projects.length).padStart(2, "0")}
               </span>
-
-              {/* thin gold rule */}
               <span style={{ display: "block", width: 30, height: 1, backgroundColor: C.gold, opacity: 0.5 }} />
-
-              {/* label */}
               <div style={{ textAlign: "center" }}>
-                <p style={{ fontSize: 8, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", lineHeight: 1.8 }}>
-                  Active
-                </p>
-                <p style={{ fontSize: 8, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", lineHeight: 1.8 }}>
-                  Projects
-                </p>
+                <p style={{ fontSize: 8, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", lineHeight: 1.8 }}>Active</p>
+                <p style={{ fontSize: 8, letterSpacing: "0.22em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", lineHeight: 1.8 }}>Projects</p>
               </div>
-
-              {/* live dot */}
               <div style={{ display: "flex", alignItems: "center", gap: 5, marginTop: 4 }}>
-                <span
-                  className="animate-pulse"
-                  style={{ display: "block", width: 6, height: 6, borderRadius: "50%", backgroundColor: "#4ade80" }}
-                />
-                <span style={{ fontSize: 7, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.22)" }}>
-                  Live
-                </span>
+                <span className="animate-pulse" style={{ display: "block", width: 6, height: 6, borderRadius: "50%", backgroundColor: "#4ade80" }} />
+                <span style={{ fontSize: 7, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.22)" }}>Live</span>
               </div>
             </div>
 
-            {/* ── RIGHT: gold left-border content ── */}
-            <div
-              style={{
-                flex:          1,
-                borderLeft:    `3px solid ${C.gold}`,
-                display:       "flex",
-                flexDirection: "column",
-                justifyContent:"space-between",
-                padding:       "32px 28px 28px 36px",
-              }}
-            >
+            {/* RIGHT content */}
+            <div style={{ flex: 1, borderLeft: `3px solid ${C.gold}`, display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "32px 28px 28px 36px" }}>
 
-              {/* eyebrow row */}
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, ...fu(0.07) }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                   <span style={{ display: "block", width: 22, height: 1, backgroundColor: C.gold }} />
-                  <span style={{ fontSize: 9, letterSpacing: "0.22em", textTransform: "uppercase", color: C.gold, fontWeight: 600 }}>
-                    The Nest Realty
-                  </span>
+                  <span style={{ fontSize: 9, letterSpacing: "0.22em", textTransform: "uppercase", color: C.gold, fontWeight: 600 }}>The Nest Realty</span>
                 </div>
-                <span
-                  className="hidden md:block"
-                  style={{ fontSize: 9, letterSpacing: "0.16em", textTransform: "uppercase", color: C.muted }}
-                >
+                <span className="hidden md:block" style={{ fontSize: 9, letterSpacing: "0.16em", textTransform: "uppercase", color: C.muted }}>
                   Ahmedabad · Gujarat · India
                 </span>
               </div>
 
-              {/* headline + subtitle */}
               <div style={fu(0.14)}>
-                <h1
-                  style={{
-                    fontFamily: "Georgia, serif",
-                    fontSize:   "clamp(2rem, 4vw, 3rem)",
-                    fontWeight: 700,
-                    color:      C.dark,
-                    lineHeight: 1.1,
-                    margin:     "16px 0 0",
-                  }}
-                >
-                  Our{" "}
-                  <em style={{ fontStyle: "italic", color: C.gold }}>Featured</em>
-                  <br />
-                  Projects
+                <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, color: C.dark, lineHeight: 1.1, margin: "16px 0 0" }}>
+                  Our <em style={{ fontStyle: "italic", color: C.gold }}>Featured</em><br />Projects
                 </h1>
-                <p
-                  style={{
-                    fontSize:   13,
-                    color:      C.muted,
-                    lineHeight: 1.75,
-                    maxWidth:   460,
-                    marginTop:  10,
-                  }}
-                >
+                <p style={{ fontSize: 13, color: C.muted, lineHeight: 1.75, maxWidth: 460, marginTop: 10 }}>
                   Curated homes, plots and commercial spaces across Narol, Lambha,
-                  Bopal and Thaltej — handpicked for families, first-time buyers
-                  and investors.
+                  Bopal and Thaltej — handpicked for families, first-time buyers and investors.
                 </p>
               </div>
 
-              {/* filter pills + count */}
-              <div
-                style={{
-                  marginTop:   24,
-                  paddingTop:  20,
-                  borderTop:   `1px solid ${C.bdr}`,
-                  display:     "flex",
-                  flexWrap:    "wrap" as const,
-                  alignItems:  "center",
-                  gap:         "12px 0",
-                  justifyContent: "space-between",
-                  ...fu(0.22),
-                }}
-              >
-                {/* <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 6 }}>
-                  {FILTERS.map((f) => {
-                    const isActive = f === active;
-                    const count    = f === "All" ? projects.length : projects.filter((p) => p.tag === f).length;
-                    return (
-                      <button
-                        key={f}
-                        onClick={() => setActive(f)}
-                        style={{
-                          fontSize:        10,
-                          letterSpacing:   "0.05em",
-                          padding:         "5px 14px",
-                          borderRadius:    3,
-                          border:          `1px solid ${isActive ? C.gold : C.bdr}`,
-                          backgroundColor: isActive ? C.gold : C.cream,
-                          color:           isActive ? "#fff" : C.muted,
-                          cursor:          "pointer",
-                          transition:      "all 0.18s ease",
-                          fontWeight:      isActive ? 600 : 400,
-                        }}
-                      >
-                        {f}
-                        {count > 0 && (
-                          <span style={{ marginLeft: 5, fontSize: 9, opacity: isActive ? 0.75 : 0.45 }}>
-                            {count}
-                          </span>
-                        )}
-                      </button>
-                    );
-                  })}
-                </div> */}
-
-                {/* result count */}
-                <span style={{ fontSize: 11, color: C.muted, flexShrink: 0 }}>
-                  Showing{" "}
-                  <strong style={{ color: C.dark, fontWeight: 700 }}>{filtered.length}</strong>{" "}
+              <div style={{ marginTop: 24, paddingTop: 20, borderTop: `1px solid ${C.bdr}`, display: "flex", alignItems: "center", justifyContent: "space-between", ...fu(0.22) }}>
+                <span style={{ fontSize: 11, color: C.muted }}>
+                  Showing <strong style={{ color: C.dark, fontWeight: 700 }}>{filtered.length}</strong>{" "}
                   {filtered.length === 1 ? "project" : "projects"}
                 </span>
               </div>
-
             </div>
           </div>
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════
-          PROJECT GRID
-      ════════════════════════════════════════════ */}
+      {/* ── GRID ── */}
       <section id="projects" style={{ backgroundColor: C.cream, paddingBlock: "3.5rem" }}>
         <div className="container-x">
           {filtered.length === 0 ? (
@@ -293,18 +334,43 @@ function Projects() {
 }
 
 /* ════════════════════════════════════════════
-   PROJECT CARD
+   PROJECT CARD — image slider + specs + contact
 ════════════════════════════════════════════ */
 function ProjectCard({
   project: p,
   index:   i,
   visible,
 }: {
-  project: (typeof projects)[0];
+  project: Project;
   index:   number;
   visible: boolean;
 }) {
-  const [hovered, setHovered] = useState(false);
+  const [hovered, setHovered]     = useState(false);
+  const [activeImg, setActiveImg] = useState(0);
+  const [animating, setAnimating] = useState(false);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+
+  const total = p.imgs.length;
+
+  function goTo(next: number, dir: "left" | "right") {
+    if (animating || next === activeImg) return;
+    setDirection(dir);
+    setAnimating(true);
+    setTimeout(() => {
+      setActiveImg(next);
+      setAnimating(false);
+    }, 350);
+  }
+
+  function prev(e: React.MouseEvent) {
+    e.preventDefault();
+    goTo((activeImg - 1 + total) % total, "left");
+  }
+
+  function next(e: React.MouseEvent) {
+    e.preventDefault();
+    goTo((activeImg + 1) % total, "right");
+  }
 
   return (
     <article
@@ -319,115 +385,243 @@ function ProjectCard({
         opacity:         visible ? 1 : 0,
         transform:       visible ? "translateY(0)" : "translateY(32px)",
         transition:      `opacity 0.55s ${i * 0.08}s ease, transform 0.55s ${i * 0.08}s ease, border-color 0.25s ease`,
+        display:         "flex",
+        flexDirection:   "column",
       }}
     >
-      {/* image */}
-      <div style={{ position: "relative", height: 215, overflow: "hidden" }}>
-        <img
-          src={p.img}
-          alt={p.title}
-          loading="lazy"
-          style={{
-            width:      "100%",
-            height:     "100%",
-            objectFit:  "cover",
-            transform:  hovered ? "scale(1.07)" : "scale(1)",
-            transition: "transform 0.65s ease",
-          }}
-        />
-        {/* overlay */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(28,22,16,0.65) 0%, transparent 55%)" }} />
 
-        {/* tag */}
-        {/* <span
-          className={`${p.tagColor} text-white`}
-          style={{
-            position:      "absolute",
-            top:           12,
-            left:          12,
-            fontSize:      9,
-            fontWeight:    600,
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-            padding:       "3px 10px",
-            borderRadius:  99,
-          }}
-        >
-          {p.tag}
-        </span> */}
+      {/* ── IMAGE SLIDER ── */}
+      <div style={{ position: "relative", height: 210, overflow: "hidden", backgroundColor: C.dark, flexShrink: 0 }}>
 
-        {/* price pill */}
-        <span
-          style={{
-            position:        "absolute",
-            bottom:          12,
-            right:           12,
-            backgroundColor: "rgba(28,22,16,0.72)",
-            color:           C.goldL,
-            fontFamily:      "Georgia, serif",
-            fontSize:        14,
-            fontWeight:      700,
-            padding:         "3px 12px",
-            borderRadius:    99,
-          }}
-        >
-          {p.price}
-        </span>
+        {p.imgs.map((src, idx) => {
+          const isCurrent = idx === activeImg;
+          return (
+            <img
+              key={idx}
+              src={src}
+              alt={`${p.title} ${idx + 1}`}
+              loading="lazy"
+              style={{
+                position:   "absolute",
+                inset:      0,
+                width:      "100%",
+                height:     "100%",
+                objectFit:  "cover",
+                transform:  isCurrent
+                  ? animating
+                    ? direction === "right" ? "translateX(-100%)" : "translateX(100%)"
+                    : "translateX(0%)"
+                  : direction === "right"
+                    ? "translateX(100%)"
+                    : "translateX(-100%)",
+                transition: "transform 0.38s cubic-bezier(0.4,0,0.2,1)",
+                zIndex:     isCurrent ? 1 : 0,
+              }}
+            />
+          );
+        })}
+
+        {/* gradient */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(28,22,16,0.65) 0%, transparent 55%)", pointerEvents: "none", zIndex: 2 }} />
+
+        {/* prev */}
+        {total > 1 && (
+          <button
+            onClick={prev}
+            style={{
+              position: "absolute", left: 8, top: "50%", transform: "translateY(-50%)",
+              zIndex: 3, width: 30, height: 30, borderRadius: "50%",
+              border: "1px solid rgba(255,255,255,0.25)", backgroundColor: "rgba(28,22,16,0.55)",
+              color: "#fff", display: "flex", alignItems: "center", justifyContent: "center",
+              cursor: "pointer", opacity: hovered ? 1 : 0, transition: "opacity 0.25s ease, background-color 0.2s ease",
+            }}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = C.gold)}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "rgba(28,22,16,0.55)")}
+          >
+            <ChevronLeft style={{ width: 15, height: 15 }} />
+          </button>
+        )}
+
+        {/* next */}
+        {total > 1 && (
+          <button
+            onClick={next}
+            style={{
+              position: "absolute", right: 8, top: "50%", transform: "translateY(-50%)",
+              zIndex: 3, width: 30, height: 30, borderRadius: "50%",
+              border: "1px solid rgba(255,255,255,0.25)", backgroundColor: "rgba(28,22,16,0.55)",
+              color: "#fff", display: "flex", alignItems: "center", justifyContent: "center",
+              cursor: "pointer", opacity: hovered ? 1 : 0, transition: "opacity 0.25s ease, background-color 0.2s ease",
+            }}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = C.gold)}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "rgba(28,22,16,0.55)")}
+          >
+            <ChevronRight style={{ width: 15, height: 15 }} />
+          </button>
+        )}
+
+        {/* dot indicators */}
+        {total > 1 && (
+          <div style={{ position: "absolute", bottom: 10, left: "50%", transform: "translateX(-50%)", display: "flex", gap: 5, zIndex: 3 }}>
+            {p.imgs.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={(e) => { e.preventDefault(); goTo(idx, idx > activeImg ? "right" : "left"); }}
+                style={{
+                  width: activeImg === idx ? 18 : 6, height: 6, borderRadius: 99,
+                  backgroundColor: activeImg === idx ? C.goldL : "rgba(255,255,255,0.45)",
+                  border: "none", padding: 0, cursor: "pointer",
+                  transition: "width 0.3s ease, background-color 0.3s ease",
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* counter */}
+        {total > 1 && (
+          <span style={{
+            position: "absolute", top: 10, right: 10,
+            fontSize: 9, fontWeight: 600, letterSpacing: "0.08em",
+            color: "rgba(255,255,255,0.75)", backgroundColor: "rgba(28,22,16,0.5)",
+            padding: "2px 8px", borderRadius: 99, zIndex: 3,
+          }}>
+            {activeImg + 1} / {total}
+          </span>
+        )}
       </div>
 
-      {/* card body */}
-      <div style={{ padding: "16px 18px 20px" }}>
+      {/* ── CARD BODY ── */}
+      <div style={{ padding: "16px 18px 20px", display: "flex", flexDirection: "column", flex: 1 }}>
 
-        <h3 style={{ fontFamily: "Georgia, serif", fontSize: 19, fontWeight: 700, color: C.dark, lineHeight: 1.15, margin: 0 }}>
+        {/* title + location */}
+        <h3 style={{ fontFamily: "Georgia, serif", fontSize: 18, fontWeight: 700, color: C.dark, lineHeight: 1.15, margin: 0 }}>
           {p.title}
         </h3>
-
         <p style={{ display: "flex", alignItems: "center", gap: 4, marginTop: 5, fontSize: 11, color: C.muted }}>
           <MapPin style={{ width: 11, height: 11, flexShrink: 0 }} />
           {p.location}
         </p>
 
-        {/* spec chips */}
-        <div style={{ marginTop: 12, display: "flex", flexWrap: "wrap" as const, gap: 6 }}>
-          {p.beds > 0 && (
-            <span style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, color: C.muted, backgroundColor: C.cream, border: `1px solid ${C.bdr}`, borderRadius: 4, padding: "3px 10px" }}>
-              <Bed style={{ width: 11, height: 11 }} /> {p.beds} BHK
-            </span>
-          )}
-          {/* {p.baths > 0 && (
-            <span style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, color: C.muted, backgroundColor: C.cream, border: `1px solid ${C.bdr}`, borderRadius: 4, padding: "3px 10px" }}>
-              <Bath style={{ width: 11, height: 11 }} /> {p.baths} Bath
-            </span>
-          )} */}
-          <span style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, color: C.muted, backgroundColor: C.cream, border: `1px solid ${C.bdr}`, borderRadius: 4, padding: "3px 10px" }}>
-            <Maximize style={{ width: 11, height: 11 }} /> {p.area}
-          </span>
+        {/* specs table */}
+        <div
+          style={{
+            marginTop:    12,
+            borderTop:    `1px solid ${C.bdr}`,
+            paddingTop:   10,
+            display:      "flex",
+            flexDirection:"column",
+            gap:          6,
+            flex:         1,
+          }}
+        >
+          {p.specs.map((s, si) => (
+            <div
+              key={si}
+              style={{
+                display:         "flex",
+                alignItems:      "flex-start",
+                justifyContent:  "space-between",
+                gap:             8,
+                fontSize:        10,
+              }}
+            >
+              {/* label chip */}
+              <span
+                style={{
+                  flexShrink:      0,
+                  backgroundColor: C.cream,
+                  border:          `1px solid ${C.bdr}`,
+                  borderRadius:    4,
+                  padding:         "2px 8px",
+                  color:           C.dark,
+                  fontWeight:      600,
+                  letterSpacing:   "0.03em",
+                  display:         "flex",
+                  alignItems:      "center",
+                  gap:             4,
+                }}
+              >
+                <Bed style={{ width: 10, height: 10, color: C.gold }} />
+                {s.label}
+              </span>
+              {/* sizes */}
+              <span
+                style={{
+                  color:      C.muted,
+                  textAlign:  "right",
+                  lineHeight: 1.55,
+                  fontSize:   10,
+                }}
+              >
+                {s.sizes}
+              </span>
+            </div>
+          ))}
         </div>
 
-        {/* CTA */}
-        <div style={{ marginTop: 14, paddingTop: 14, borderTop: `1px solid ${C.bdr}`, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        {/* contact + CTA */}
+        <div
+          style={{
+            marginTop:  14,
+            paddingTop: 12,
+            borderTop:  `1px solid ${C.bdr}`,
+            display:    "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 8,
+          }}
+        >
+          {/* contact numbers */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+            {p.contact.map((num, ni) => (
+              <a
+                key={ni}
+                href={`tel:${num}`}
+                style={{
+                  display:        "flex",
+                  alignItems:     "center",
+                  gap:            5,
+                  fontSize:       10,
+                  color:          C.muted,
+                  textDecoration: "none",
+                  fontWeight:     500,
+                  letterSpacing:  "0.04em",
+                  transition:     "color 0.2s ease",
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = C.gold)}
+                onMouseLeave={e => (e.currentTarget.style.color = C.muted)}
+              >
+                <Phone style={{ width: 10, height: 10, flexShrink: 0 }} />
+                {num}
+              </a>
+            ))}
+          </div>
+
+          {/* enquire CTA */}
           <Link
             to="/contact"
             style={{
               display:        "flex",
               alignItems:     "center",
-              gap:            8,
-              fontSize:       10,
+              gap:            6,
+              fontSize:       9,
               letterSpacing:  "0.18em",
               textTransform:  "uppercase",
               fontWeight:     600,
               color:          C.gold,
               textDecoration: "none",
+              flexShrink:     0,
             }}
           >
-            Enquire Now
+            Enquire
             <span
               style={{
                 display:         "flex",
                 alignItems:      "center",
                 justifyContent:  "center",
-                width:           26,
-                height:          26,
+                width:           24,
+                height:          24,
                 borderRadius:    "50%",
                 border:          `1px solid ${C.gold}`,
                 backgroundColor: hovered ? C.gold : "transparent",
@@ -435,13 +629,13 @@ function ProjectCard({
                 transition:      "all 0.22s ease",
               }}
             >
-              <ArrowUpRight style={{ width: 11, height: 11 }} />
+              <ArrowUpRight style={{ width: 10, height: 10 }} />
             </span>
           </Link>
         </div>
       </div>
 
-      {/* bottom sweep bar on hover */}
+      {/* bottom sweep bar */}
       <div
         style={{
           position:        "absolute",

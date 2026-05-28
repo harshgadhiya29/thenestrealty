@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
-import logo from "@/assets/logo.png";
+import { Facebook, Instagram, Youtube,Linkedin, MapPin, Phone, Mail } from "lucide-react";
+import logo from "@/assets/TNR.png";
 
 export function Footer() {
   return (
@@ -21,15 +21,23 @@ export function Footer() {
           </p>
 
           <div className="flex gap-3 mt-5">
-            {[
-              {
-                icon: Facebook,
-                link: "https://www.facebook.com/profile.php?id=61569187020817",
-              },
-              {
-                icon: Instagram,
-                link: "https://www.instagram.com/thenest_realty/",
-              },
+          {[
+  {
+    icon: Facebook,
+    link: "https://www.facebook.com/share/1B7XTiEgy5/?mibextid=wwXIfr",
+  },
+  {
+    icon: Instagram,
+    link: "https://www.instagram.com/thenest_realty?igsh=MTM4MGR0czg4cnNjZA%3D%3D&utm_source=qr",
+  },
+  {
+    icon: Youtube,
+    link: "https://youtube.com/@thenest_realty?si=EfGL9xKUP1kWMKXt",
+  },
+  {
+    icon: Linkedin,
+    link: "https://www.linkedin.com/company/the-nest-realty/",
+  },
             ].map(({ icon: Icon, link }, i) => (
               <a
                 key={i}
@@ -104,12 +112,12 @@ export function Footer() {
 
             <li className="flex gap-2">
               <Phone className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-              +91 98765 43210
+              +91  9925004858
             </li>
 
             <li className="flex gap-2">
               <Mail className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-              hello@thenestrealty.in
+              info@thenestrealty@gmail.com
             </li>
           </ul>
         </div>

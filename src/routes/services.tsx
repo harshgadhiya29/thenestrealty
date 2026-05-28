@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Home, Building2, TrendingUp, MapPinned, ArrowRight, Phone } from "lucide-react";
+import { Home, Building2, TrendingUp, MapPinned, ArrowRight, Phone, ShieldCheck, Rocket, Megaphone, Users, Handshake, Network, BarChart3, Landmark, Headset, ClipboardCheck, BadgeCheck } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
+import serviceHero  from "@/assets/service-hero.png";
+import servicecta  from "@/assets/servicecat.png";
+
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -17,39 +20,93 @@ export const Route = createFileRoute("/services")({
 
 const services = [
   {
-    icon: Home,
+    icon: ShieldCheck,
     label: "01",
-    title: "Property Buying",
-    tagline: "Find your perfect match",
-    desc: "From shortlisting to site visits to final negotiation — we walk every step of the buying journey with you, making sure your home matches your life and your budget.",
-    points: ["Curated shortlists", "Site visits & comparisons", "Negotiation & paperwork"],
+    title: "Brand Positioning",
+    tagline: "Build a brand that stands out",
+    desc: "Creating a premium project identity and strong market positioning through strategic branding that enhances visibility, trust, and overall market demand.",
+    points: ["Strategic brand identity creation", "Premium positioning in the market", "Clear messaging that builds trust"],
     accent: "#C9A96E",
   },
   {
-    icon: Building2,
+    icon: Rocket,
     label: "02",
-    title: "Property Selling",
-    tagline: "Sell faster, earn smarter",
-    desc: "Sell faster and smarter. We craft a tailored marketing plan for your property and bring it in front of qualified buyers across our network.",
-    points: ["Property valuation", "Targeted marketing", "Buyer screening"],
+    title: "Project Launch Strategy",
+    tagline: "Launch with maximum impact",
+    desc: "Strategic launch planning designed to maximize visibility, buyer engagement, and market impact.",
+    points: ["Pre-launch buzz creation & market positioning", "Multi-channel promotional campaign execution", "Targeted buyer outreach & engagement strategy"],
     accent: "#C9A96E",
   },
   {
-    icon: TrendingUp,
+    icon: Megaphone,
     label: "03",
-    title: "Investment Advisory",
-    tagline: "Grow wealth through property",
-    desc: "Build wealth through real estate with a strategy designed around your risk profile and time horizon — backed by hyper-local market intelligence.",
-    points: ["Yield analysis", "Portfolio planning", "Exit strategy"],
+    title: "360° MARKETING",
+    tagline: "Marketing from every angle",
+    desc: "Integrated digital and offline campaigns designed to build strong project visibility, attract the right audience, and create consistent brand awareness across all channels.",
+    points: ["Digital marketing campaigns", "Offline marketing & on-ground promotions", "Brand awareness & visibility strategy"],
     accent: "#C9A96E",
   },
   {
-    icon: MapPinned,
+    icon: Users,
     label: "04",
-    title: "Land Acquisition",
-    tagline: "Secure land, secure future",
-    desc: "End-to-end support for sourcing, due diligence and acquiring land — for self-use, development or long-term holding.",
-    points: ["Title verification", "RERA / regulatory checks", "Acquisition support"],
+    title: "LEAD GENERATION",
+    tagline: "Turn interest into buyers",
+    desc: "Targeted lead acquisition systems designed to attract high-quality buyers and investors through data-driven marketing and strategic outreach.",
+    points: ["Targeted audience segmentation & profiling", "Digital ad campaigns for lead capture", "High-conversion landing pages & funnels"],
+    accent: "#C9A96E",
+  },
+   {
+    icon: Handshake,
+    label: "05",
+    title: "SALES EXECUTION",
+    tagline: "From inquiry to closure",
+    desc: "Professional handling of inquiries, site visits, negotiations, and complete sales coordination to ensure smooth and effective conversion from leads to buyers.",
+    points: ["Inquiry handling & lead qualification", "Site visit planning & client coordination", "Professional negotiation & deal closure support"],
+    accent: "#C9A96E",
+  },
+  {
+    icon: Network,
+    label: "06",
+    title: "CHANNEL PARTNER NETWORK",
+    tagline: "Stronger network, wider reach",
+    desc: "Strong broker and industry connections that amplify project exposure, accelerate sales, and create wider market opportunities through an established channel ecosystem.",
+    points: ["Builder–broker relationship management", "Strong channel partner onboarding & engagement", "Broker incentive & commission structuring"],
+    accent: "#C9A96E",
+  },
+   {
+    icon: BarChart3,
+    label: "07",
+    title: "MARKET ANALYSIS",
+    tagline: "Insights that drive smart decisions",
+    desc: "Research-based market intelligence and location analysis designed to identify growth opportunities, understand buyer behavior, and position projects effectively in competitive markets.",
+    points: ["Location feasibility & demand analysis", "Competitor benchmarking & pricing insights", "Buyer behavior & market trend research"],
+    accent: "#C9A96E",
+  },
+   {
+    icon: Landmark,
+    label: "08",
+    title: "INVESTOR NETWORK",
+    tagline: "Connected to serious investors",
+    desc: "A growing network of active investors and qualified buyers that enhances project visibility, accelerates deal closures, and creates stronger market reach through trusted investment connections.",
+    points: ["Access to verified investors & HNI buyers", "Early-stage project investment outreach", "Strong referral & repeat investor network"],
+    accent: "#C9A96E",
+  },
+  {
+    icon: Headset,
+    label: "09",
+    title: "AFTER-SALES SUPPORT",
+    tagline: "Support beyond the sale",
+    desc: "Ongoing assistance after the sale, ensuring smooth documentation, coordination, and customer support to build long-term trust and satisfaction.",
+    points: ["Documentation assistance & handover support", "Coordination with developers & legal teams", "Post-sale customer support & query handling"],
+    accent: "#C9A96E",
+  },
+  {
+    icon: ClipboardCheck,
+    label: "10",
+    title: "PROJECT PLANNING & ANALYSIS",
+    tagline: "Plan smart, build better",
+    desc: "We analyse locations, buyer demand, and market trends to help developers plan projects with stronger positioning, better sales potential, and long-term growth success.",
+    points: ["Location feasibility & land analysis", "Buyer demand & target audience study", "Market trends & competitor evaluation"],
     accent: "#C9A96E",
   },
 ];
@@ -310,352 +367,146 @@ function Services() {
   return (
     <PageLayout>
       {/* ── HERO: White editorial split layout ───────────────────── */}
-      <section
+  <section className="relative overflow-hidden min-h-[860px]">
+  
+  {/* FULL BACKGROUND IMAGE */}
+  <div className="absolute inset-0">
+    <img
+      src={serviceHero}
+      alt="The Nest Realty Services"
+      className="w-full h-full object-cover"
+    />
+
+    {/* LEFT LIGHT OVERLAY */}
+    <div className="absolute inset-0 bg-gradient-to-r from-[#faf7f2] via-[#faf7f2]/40 to-transparent" />
+
+    {/* GOLDEN OVERLAY */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(135deg, rgba(201,169,110,0.08) 0%, transparent 60%)",
+      }}
+    />
+
+    {/* SOFT VIGNETTE */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-white/10" />
+  </div>
+
+  {/* CONTENT */}
+  <div className="container-x relative z-10">
+    <div className="max-w-[640px] min-h-[860px] flex flex-col justify-center py-20">
+      
+      {/* EYEBROW */}
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-2 h-2 rounded-full bg-primary" />
+
+        <p className="text-xs tracking-[0.25em] uppercase text-primary font-semibold">
+          Our Services
+        </p>
+      </div>
+
+      {/* TITLE */}
+      <h1
+        className="font-bold text-[#1d140d] leading-[0.98]"
         style={{
-          background: "#fff",
-          borderBottom: "1px solid #f0ebe2",
-          overflow: "hidden",
+          fontSize: "clamp(3.5rem, 7vw, 6.2rem)",
+          fontFamily: "Georgia, serif",
         }}
       >
-        {/* Top bar */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "1.4rem 4rem",
-            borderBottom: "1px solid #f0ebe2",
-          }}
+        Real estate,
+        <br />
+        done{" "}
+        <span className="text-primary italic font-medium">
+          right
+        </span>
+        <br />
+        for you.
+      </h1>
+
+      {/* DESCRIPTION */}
+      <p className="mt-8 text-[#6e5b4b] leading-relaxed text-lg max-w-[560px]">
+        From finding your first home to building a property portfolio —
+        we bring expertise, local knowledge and honest guidance to every
+        step.
+      </p>
+
+      {/* BUTTONS */}
+      <div className="flex flex-wrap gap-4 mt-10">
+        <a
+          href="/contact"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-xl
+                     bg-primary text-primary-foreground font-medium
+                     shadow-xl hover:opacity-90 hover:translate-y-[-2px]
+                     transition-all duration-300"
         >
-          <div
-            style={{
-              fontFamily: "'Georgia', 'Times New Roman', serif",
-              fontSize: "1.1rem",
-              color: "#1a1410",
-              letterSpacing: "0.04em",
-              fontWeight: 700,
-            }}
-          >
-            The Nest Realty
-          </div>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "6px",
-              border: "1px solid #e8dfd0",
-              borderRadius: "100px",
-              padding: "0.35rem 1rem",
-              fontSize: "0.72rem",
-              fontWeight: 600,
-              color: "#8a6d3b",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            <span
-              style={{ width: 6, height: 6, borderRadius: "50%", background: "#C9A96E" }}
-            />
-            Ahmedabad's Trusted Realty Partner
-          </div>
-        </div>
+          Book Free Consultation →
+        </a>
 
-        {/* ── Main split grid — equal padding on both sides ── */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 440px",
-            minHeight: "520px",
-          }}
+        <a
+          href="tel:+91XXXXXXXXXX"
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-xl
+                     border border-[#dfcfb8]
+                     bg-white/80 backdrop-blur-md
+                     text-[#6b5132] font-medium
+                     hover:border-primary hover:bg-white
+                     transition-all duration-300"
         >
-          {/* ── Left: headline + stats ── */}
-          <div
-            style={{
-              padding: "4rem 5rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRight: "1px solid #f0ebe2",
-              position: "relative",
-            }}
-          >
-            {/* Ghost decorative number */}
+          <Phone size={16} />
+          Call Now
+        </a>
+      </div>
+
+      {/* STATS BAR */}
+      <div
+        className="mt-16 grid grid-cols-3 rounded-[1.8rem]
+                   border border-white/40 bg-white/70 backdrop-blur-xl
+                   overflow-hidden shadow-2xl max-w-[720px]"
+      >
+        {[
+          {
+            icon: Building2,
+            value: "500+",
+            label: "Properties Sold",
+          },
+          {
+            icon: BadgeCheck,
+            value: "12+",
+            label: "Years Experience",
+          },
+          {
+            icon: Users,
+            value: "98%",
+            label: "Client Satisfaction",
+          },
+        ].map((item, i) => {
+          const Icon = item.icon;
+
+          return (
             <div
-              style={{
-                position: "absolute",
-                bottom: "2.5rem",
-                left: "5rem",
-                fontFamily: "'Georgia', serif",
-                fontSize: "6rem",
-                fontWeight: 700,
-                color: "#f5f0e8",
-                lineHeight: 1,
-                pointerEvents: "none",
-                userSelect: "none",
-                zIndex: 0,
-              }}
+              key={i}
+              className="flex items-center gap-4 px-6 py-6 border-r border-[#eee2d3] last:border-r-0"
             >
-              04
-            </div>
-
-            <div style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: "560px" }}>
-              {/* Eyebrow */}
-              <div
-                style={{
-                  fontSize: "0.72rem",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "#C9A96E",
-                  fontWeight: 700,
-                  marginBottom: "1.2rem",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.6rem",
-                }}
-              >
-                <span
-                  style={{ width: 6, height: 6, borderRadius: "50%", background: "#C9A96E" }}
-                />
-                Our Services
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                <Icon size={20} className="text-primary" />
               </div>
 
-              {/* Headline */}
-              <h1
-                style={{
-                  fontFamily: "'Georgia', 'Times New Roman', serif",
-                  fontSize: "clamp(2.4rem, 4.5vw, 3.4rem)",
-                  fontWeight: 700,
-                  color: "#1a1410",
-                  lineHeight: 1.12,
-                  margin: "0 0 1.5rem",
-                }}
-              >
-                Real estate,
-                <br />
-                done{" "}
-                <em style={{ color: "#C9A96E", fontStyle: "italic" }}>right</em>
-                <br />
-                for you.
-              </h1>
-
-              {/* Sub */}
-              <p
-                style={{
-                  fontSize: "0.97rem",
-                  color: "#7a6858",
-                  lineHeight: 1.78,
-                  maxWidth: "480px",
-                  margin: "0 0 2.5rem",
-                  fontWeight: 400,
-                }}
-              >
-                From finding your first home to building a property portfolio — we bring
-                expertise, local knowledge, and honest guidance to every step.
-              </p>
-
-              {/* CTA buttons */}
-              <div
-                style={{
-                  display: "flex",
-                  gap: "0.9rem",
-                  flexWrap: "wrap",
-                  marginBottom: "3rem",
-                }}
-              >
-                <Link
-                  to="/contact"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    background: "#C9A96E",
-                    color: "#fff",
-                    padding: "0.85rem 1.8rem",
-                    borderRadius: "8px",
-                    fontWeight: 600,
-                    fontSize: "0.875rem",
-                    textDecoration: "none",
-                    letterSpacing: "0.02em",
-                    transition: "background 0.2s ease",
-                  }}
-                >
-                  Book Free Consultation <ArrowRight size={15} />
-                </Link>
-                <a
-                  href="tel:+91XXXXXXXXXX"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    border: "1px solid #ddd4c5",
-                    color: "#5a4020",
-                    padding: "0.85rem 1.8rem",
-                    borderRadius: "8px",
-                    fontWeight: 400,
-                    fontSize: "0.875rem",
-                    textDecoration: "none",
-                    transition: "border-color 0.2s ease",
-                  }}
-                >
-                  <Phone size={15} /> Call Now
-                </a>
-              </div>
-
-              {/* Stats strip */}
-              <div
-                ref={statsRef}
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(3, 1fr)",
-                  borderTop: "1px solid #f0ebe2",
-                  paddingTop: "2rem",
-                  gap: "1rem",
-                }}
-              >
-                <StatItem value={500} suffix="+" label="Properties Sold" start={statsVisible} />
-                <StatItem value={12} suffix="+" label="Years Experience" start={statsVisible} />
-                <StatItem value={98} suffix="%" label="Client Satisfaction" start={statsVisible} />
-              </div>
-            </div>
-          </div>
-
-          {/* ── Right: service rows panel — equal padding ── */}
-          <div
-            style={{
-              background: "#faf7f2",
-              position: "relative",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              padding: "4rem 3.5rem",
-              gap: "0.85rem",
-            }}
-          >
-          
-            <div
-              style={{
-                position: "absolute",
-                left: 0,
-                top: 0,
-                bottom: 0,
-                width: "3px",
-                background: "linear-gradient(to bottom, transparent, #C9A96E 30%, #C9A96E 70%, transparent)",
-              }}
-            />
-
-            <div
-              style={{
-                fontSize: "0.68rem",
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "#b09070",
-                fontWeight: 600,
-                marginBottom: "0.25rem",
-              }}
-            >
-              What we offer
-            </div>
-
-            {services.map((s) => {
-              const Icon = s.icon;
-              return (
-                <div
-                  key={s.title}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "1rem",
-                    padding: "1rem 1.2rem",
-                    background: "#fff",
-                    border: "1px solid #ede8df",
-                    borderRadius: "12px",
-                    cursor: "pointer",
-                    transition: "border-color 0.2s ease, box-shadow 0.2s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = "#C9A96E";
-                    (e.currentTarget as HTMLDivElement).style.boxShadow =
-                      "0 4px 16px rgba(201,169,110,0.12)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = "#ede8df";
-                    (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "42px",
-                      height: "42px",
-                      borderRadius: "10px",
-                      background: "#f9f5ef",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Icon size={18} color="#8a6d3b" strokeWidth={1.5} />
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <div
-                      style={{ fontSize: "0.9rem", fontWeight: 600, color: "#1a1410" }}
-                    >
-                      {s.title}
-                    </div>
-                    <div
-                      style={{ fontSize: "0.74rem", color: "#a08060", marginTop: "3px" }}
-                    >
-                      {s.points.join(" · ")}
-                    </div>
-                  </div>
-                  <ArrowRight size={14} color="#C9A96E" />
-                </div>
-              );
-            })}
-
-            <div
-              style={{
-                marginTop: "0.25rem",
-                padding: "1rem 1.2rem",
-                borderRadius: "12px",
-                background: "#fff7ec",
-                border: "1px solid #f0dfc0",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.85rem",
-              }}
-            >
-              <div
-                style={{
-                  width: "36px",
-                  height: "36px",
-                  borderRadius: "8px",
-                  background: "rgba(201,169,110,0.12)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                }}
-              >
-                <Phone size={16} color="#C9A96E" />
-              </div>
               <div>
-                <div
-                  style={{ fontSize: "0.82rem", fontWeight: 600, color: "#5a4020" }}
-                >
-                  Free 30-min consultation
-                </div>
-                <div
-                  style={{ fontSize: "0.72rem", color: "#a08060", marginTop: "2px" }}
-                >
-                  No obligation · Available 6 days a week
-                </div>
+                <h3 className="text-3xl font-bold text-primary leading-none">
+                  {item.value}
+                </h3>
+
+                <p className="mt-1 text-xs tracking-[0.12em] uppercase text-[#8d7763]">
+                  {item.label}
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ── SERVICE CARDS ─────────────────────────────────────────── */}
       <section style={{ padding: "7rem 0", background: "#faf7f2" }}>
@@ -704,83 +555,118 @@ function Services() {
       </section>
 
       {/* ── CTA BAND ───────────────────────────────────────────────── */}
-      <section
+    <section className="py-16 bg-background">
+  <div className="container-x">
+    
+    <div
+      className="relative overflow-hidden rounded-[2rem] border border-[#e9dfd2]
+                 min-h-[360px] shadow-[0_15px_60px_rgba(0,0,0,0.06)]"
+    >
+      
+      {/* BACKGROUND IMAGE */}
+      <img
+        src={servicecta}
+        alt="Luxury interior"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* LIGHT OVERLAY */}
+      <div
+        className="absolute inset-0"
         style={{
-          background: "#12100d",
-          padding: "6rem 2rem",
-          position: "relative",
-          overflow: "hidden",
+          background:
+            "linear-gradient(90deg, rgba(248,244,238,0.97) 0%, rgba(248,244,238,0.94) 28%, rgba(248,244,238,0.65) 48%, rgba(248,244,238,0.12) 72%, rgba(248,244,238,0.02) 100%)",
         }}
-      >
-        {/* Decorative top line */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            height: "3px",
-            background: "linear-gradient(90deg, transparent, #C9A96E, transparent)",
-          }}
-        />
+      />
 
-        <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center" }}>
-          <p
-            style={{
-              fontSize: "0.75rem",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              color: "#C9A96E",
-              fontWeight: 600,
-              marginBottom: "1rem",
-            }}
-          >
-            Free Consultation
+      {/* SOFT GOLDEN GLOW */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(201,169,110,0.08) 0%, transparent 45%)",
+        }}
+      />
+
+      {/* CONTENT */}
+      <div className="relative z-10 h-full flex items-center">
+        
+        <div className="max-w-[480px] px-8 py-8 md:px-14 md:py-6">
+          
+          {/* SMALL LABEL */}
+          <p className="text-[11px] tracking-[0.28em] uppercase text-primary font-semibold mb-4">
+            Let’s Build Success Together
           </p>
+
+          {/* TITLE */}
           <h2
+            className="font-bold text-[#17120d] leading-[1.02]"
             style={{
-              fontFamily: "'Georgia', serif",
-              fontSize: "clamp(2rem, 4vw, 3rem)",
-              fontWeight: 700,
-              color: "#fff",
-              lineHeight: 1.2,
-              marginBottom: "1.2rem",
+              fontSize: "clamp(2.3rem, 4vw, 2.5rem)",
+              fontFamily: "Georgia, serif",
             }}
           >
-            Not sure where to start?
+            Your vision.
+            <br />
+            Our expertise.
+            <br />
+            Lasting value.
           </h2>
-          <p
-            style={{
-              fontSize: "1rem",
-              color: "rgba(255,255,255,0.55)",
-              lineHeight: 1.75,
-              marginBottom: "2.5rem",
-            }}
-          >
-            Book a free 30-minute consultation. We'll help you map out the smartest next
-            step for your real estate journey.
-          </p>
-          <Link
-            to="/contact"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.6rem",
-              background: "#C9A96E",
-              color: "#12100d",
-              padding: "1rem 2.4rem",
-              borderRadius: "8px",
-              fontWeight: 700,
-              fontSize: "0.92rem",
-              textDecoration: "none",
-              letterSpacing: "0.02em",
-            }}
-          >
-            Book Consultation <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
 
+          {/* DESCRIPTION */}
+          <p className="mt-5 text-[#675647] leading-relaxed text-sm md:text-base max-w-md">
+            Partner with The Nest Realty and experience
+            real estate services that deliver results.
+          </p>
+
+          {/* BUTTONS */}
+          <div className="flex flex-wrap gap-4 mt-8">
+            
+            {/* PRIMARY BTN */}
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2
+                         px-7 py-3.5 rounded-xl
+                         bg-primary text-primary-foreground
+                         font-semibold text-sm
+                         shadow-lg
+                         hover:opacity-90 hover:-translate-y-[2px]
+                         transition-all duration-300"
+            >
+              Book Free Consultation
+              <ArrowRight size={16} />
+            </a>
+
+            {/* SECONDARY BTN */}
+            <a
+              href="/projects"
+              className="inline-flex items-center gap-2
+                         px-7 py-3.5 rounded-xl
+                         border border-[#ddd1c1]
+                         bg-white/90 backdrop-blur-md
+                         text-[#5c4630]
+                         font-semibold text-sm
+                         hover:border-primary hover:bg-white
+                         transition-all duration-300"
+            >
+              View Our Projects
+              <ArrowRight size={16} />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* SOFT RIGHT VIGNETTE */}
+      <div
+        className="absolute inset-y-0 right-0 w-[25%]"
+        style={{
+          background:
+            "linear-gradient(to left, rgba(0,0,0,0.10), transparent)",
+        }}
+      />
+    </div>
+  </div>
+</section>
       {/* ── KEYFRAMES ──────────────────────────────────────────────── */}
       <style>{`
         @keyframes fadeSlideUp {

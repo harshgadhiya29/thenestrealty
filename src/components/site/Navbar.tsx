@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/TNR.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -9,7 +9,7 @@ const links = [
   { to: "/why-us", label: "Why Us" },
   { to: "/projects", label: "Our Project" },
   { to: "/services", label: "Services" },
-  { to: "/faqs", label: "FAQs" },
+  // { to: "/faqs", label: "FAQs" },
   { to: "/career", label: "Career" },
   { to: "/blogs", label: "Blogs" },
   { to: "/contact", label: "Contact Us" },
@@ -37,7 +37,7 @@ export function Navbar() {
     >
       <div className="container-x flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="The Nest Realty" className="h-12 w-auto" />
+          <img src={logo} alt="The Nest Realty" className="h-15 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7">
