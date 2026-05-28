@@ -2,20 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bed, Maximize, MapPin, ArrowUpRight, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
-import ki from "@/assets/KISHKINDHA.jpg";
-import ki1 from "@/assets/KISHKINDHA 1.jpg";
+import ki from "@/assets/kishakidha.jpg";
+import ki1 from "@/assets/kishakidha1.jpg";
 
-import p2 from "@/assets/AYODHYAPURI.jpg";
-import p3 from "@/assets/harmony.jpg";
-import p4 from "@/assets/RadheShyam.jpeg";
-import p5 from "@/assets/property-1.jpg";
-import p6 from "@/assets/property-2.jpg";
+import p2 from "@/assets/ayodhyapuri2.jpg";
+import p4 from "@/assets/radheShyam.jpeg";
+
 import a1 from "@/assets/Aqua1.jpg";
 import a2 from "@/assets/Aqua2.jpg";
 import ar1 from "@/assets/ar1.jpg";
 import ar2 from "@/assets/ar2.jpg";
-import aa1 from "@/assets/AYODHYAPURI.jpg";
-import aa2 from "@/assets/AYODHYAPURI1.jpg";
+import aa1 from "@/assets/ayodhyapuri.jpg";
+import aa2 from "@/assets/ayodhyapuri1.jpg";
 import h from "@/assets/harmony.jpg";
 import h1 from "@/assets/harmony2.jpeg";
 import kv from "@/assets/kv.jpeg";
