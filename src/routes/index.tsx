@@ -16,9 +16,9 @@ import { SectionHeader } from "@/components/site/Section";
 import heroImg from "@/assets/hero-image.png";
 import aboutImg from "@/assets/hero-about.png";
 import p1 from "@/assets/kishakidha.jpg";
-import p2 from "@/assets/ayodhyapuri.jpg";
+import p2 from "@/assets/AYODHYAPURI.jpg";
 import p3 from "@/assets/harmony.jpg";
-import p4 from "@/assets/radheShyam.jpeg";
+import p4 from "@/assets/RadheShyam.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
