@@ -5,8 +5,8 @@ import { PageLayout } from "@/components/site/PageLayout";
 import { SectionHeader } from "@/components/site/Section";
 import aboutImg from "@/assets/about-hero.jpeg";
 import aboutImg1 from "@/assets/about-hero.png";
-import meet from "@/assets/Meet.png";
-import karan from "@/assets/karan.png";
+import meet from "@/assets/meet.PNG";
+import karan from "@/assets/karan.PNG";
 
 
 export const Route = createFileRoute("/about")({
