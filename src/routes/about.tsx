@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { SectionHeader } from "@/components/site/Section";
 import aboutImg1 from "@/assets/about.png";
-import meet from "@/assets/meet.png";
+import meet from "@/assets/meet.jpeg";
 import karan from "@/assets/karan.png";
 import type { LucideIcon } from "lucide-react";
 
