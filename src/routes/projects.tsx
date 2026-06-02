@@ -3,43 +3,28 @@ import { Bed, Maximize, MapPin, ArrowUpRight, ChevronLeft, ChevronRight, Phone }
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
 import ki from "@/assets/kishakidha.jpg";
-import ki1 from "@/assets/kishakidha1.jpg";
 
-import p2 from "@/assets/ayodhyapuri2.jpg";
-import p4 from "@/assets/RadheShyam.jpeg";
 
 import a1 from "@/assets/Aqua1.jpg";
-import a2 from "@/assets/Aqua2.jpg";
 import ar1 from "@/assets/ar1.jpg";
-import ar2 from "@/assets/ar2.jpg";
 import aa1 from "@/assets/AYODHYAPURI.jpg";
-import aa2 from "@/assets/AYODHYAPURI1.jpg";
 import h from "@/assets/harmony.jpg";
-import h1 from "@/assets/harmony2.jpeg";
 import kv from "@/assets/kv.jpeg";
-import kv1 from "@/assets/kv1.jpeg";
 import ak from "@/assets/ak.jpg";
-import ak1 from "@/assets/ak1.jpg";
-import ak3 from "@/assets/ak3.jpg";
-import k from "@/assets/k.jpg";
-import k1 from "@/assets/k1.jpg";
 import ph from "@/assets/ph.jpg";
-import ph1 from "@/assets/ph1.jpg";
 import rh from "@/assets/rh.jpg";
-import rh1 from "@/assets/rh1.jpg";
 import s from "@/assets/s.jpg";
-import s1 from "@/assets/s1.jpg";
 import tntc from "@/assets/tntc.jpg";
-import tntc1 from "@/assets/tntc1.jpg";
+import k from "@/assets/k.jpg";
 
 /* ─── Brand tokens ─── */
 const C = {
-  gold:  "#8B6914",
+  gold: "#8B6914",
   goldL: "#c9a96e",
-  dark:  "#1c1610",
+  dark: "#1c1610",
   cream: "#f7f3ee",
   muted: "#9a8464",
-  bdr:   "#ddd3c0",
+  bdr: "#ddd3c0",
 } as const;
 
 export const Route = createFileRoute("/projects")({
@@ -58,64 +43,64 @@ const FILTERS = ["All", "Residential", "Commercial", "Premium", "New Launch", "R
 type Filter = (typeof FILTERS)[number];
 
 type Project = {
-  imgs:     string[];
-  title:    string;
+  imgs: string[];
+  title: string;
   location: string;
-  contact:  string[];
-  specs:    { label: string; sizes: string }[];
-  tag:      Filter;
+  contact: string[];
+  specs: { label: string; sizes: string }[];
+  tag: Filter;
 };
 
 const projects: Project[] = [
   {
-    imgs:     [ak, ak1, ak3],
-    title:    "Aryaman Kalpvruksh",
+    imgs: [ak],
+    title: "Aryaman Kalpvruksh",
     location: "Hathijan, Gujarat",
-    contact:  ["9925006434"],
+    contact: ["9925006434"],
     specs: [
-      { label: "2 BHK Flats",  sizes: "142, 146, 148, 160 Sq.Yd" },
-      { label: "3 BHK Flats",  sizes: "190, 210 Sq.Yd" },
-      { label: "Shops",        sizes: "600 – 3670 Sq.Ft" },
+      { label: "2 BHK Flats", sizes: "142, 146, 148, 160 Sq.Yd" },
+      { label: "3 BHK Flats", sizes: "190, 210 Sq.Yd" },
+      { label: "Shops", sizes: "600 – 3670 Sq.Ft" },
     ],
     tag: "New Launch",
   },
   {
-    imgs:     [s, s1],
-    title:    "Sahitya Nest",
+    imgs: [s],
+    title: "Sahitya Nest",
     location: "Vastral, Ahmedabad, Gujarat",
-    contact:  ["8200010914"],
+    contact: ["8200010914"],
     specs: [
       { label: "2 BHK Flats", sizes: "174 Sq.Yd" },
     ],
     tag: "Residential",
   },
   {
-    imgs:     [p4, rh, rh1],
-    title:    "Radhe Shyam Heritage",
+    imgs: [rh,],
+    title: "Radhe Shyam Heritage",
     location: "Lambha, Ahmedabad",
-    contact:  ["9998115571", "9998115581"],
+    contact: ["9998115571", "9998115581"],
     specs: [
       { label: "2 BHK Flats", sizes: "150 Sq.Yd" },
       { label: "3 BHK Flats", sizes: "215 Sq.Yd" },
-      { label: "Shops",       sizes: "269 – 2098 Sq.Ft" },
+      { label: "Shops", sizes: "269 – 2098 Sq.Ft" },
     ],
     tag: "Premium",
   },
   {
-    imgs:     [ki, p2, ki1],
-    title:    "Aryaman Kishkindha",
+    imgs: [ki],
+    title: "Aryaman Kishkindha",
     location: "Narol, Ahmedabad, Gujarat ",
-    contact:  ["9925008300", "9925008400"],
+    contact: ["9925008300", "9925008400"],
     specs: [
       { label: "1 BHK Flats", sizes: "89, 92, 96 Sq.Yd" },
     ],
     tag: "New Launch",
   },
   {
-    imgs:     [aa1, aa2, ],
-    title:    "Aryaman Ayodhyapuri ",
+    imgs: [aa1],
+    title: "Aryaman Ayodhyapuri ",
     location: "Narol, Ahmedabad, Gujarat",
-    contact:  ["9925008300", "9925008400"],
+    contact: ["9925008300", "9925008400"],
     specs: [
       { label: "1 BHK Flats", sizes: "96 Sq.Yd" },
       { label: "2 BHK Flats", sizes: "129, 138, 145 Sq.Yd" },
@@ -124,72 +109,72 @@ const projects: Project[] = [
     tag: "Premium",
   },
   {
-    imgs:     [a1, a2],
-    title:    "Aqua Green City",
+    imgs: [a1],
+    title: "Aqua Green City",
     location: "Ahmedabad, Gujarat",
-    contact:  ["7096950550"],
+    contact: ["7096950550"],
     specs: [
       { label: "2 BHK Flats", sizes: "134, 140 Sq.Yd" },
-      { label: "Shops",       sizes: "292 – 988 Sq.Ft" },
+      { label: "Shops", sizes: "292 – 988 Sq.Ft" },
     ],
     tag: "New Launch",
   },
   {
-    imgs:     [k, k1],
-    title:    "Keystone 30",
+    imgs: [k],
+    title: "Keystone 30",
     location: "New, Vastral, Ahmedabad, Gujarat",
-    contact:  ["9624293030"],
+    contact: ["9624293030"],
     specs: [
       { label: "4 BHK Bungalows", sizes: "Plot 124–228 Sq.Yd · Build 300 Sq.Yd" },
     ],
     tag: "Premium",
   },
   {
-    imgs:     [ph, ph1],
-    title:    "Prarthana Homes",
+    imgs: [ph],
+    title: "Prarthana Homes",
     location: "New, Vastral, Ahmedabad, Gujarat",
-    contact:  ["9925003055"],
+    contact: ["9925003055"],
     specs: [
       { label: "4 BHK Bungalows", sizes: "Plot 86–134 Sq.Yd · Build 166 Sq.Yd" },
     ],
     tag: "Residential",
   },
   {
-    imgs:     [kv, kv1],
-    title:    "Kahan Villa",
+    imgs: [kv],
+    title: "Kahan Villa",
     location: "Ahmedabad, Gujarat",
-    contact:  ["9925001037"],
+    contact: ["9925001037"],
     specs: [
       { label: "4 BHK Bungalows", sizes: "Plot 99–125 Sq.Yd · Build 180 Sq.Yd · G+2" },
     ],
     tag: "Premium",
   },
   {
-    imgs:     [ar1, ar2],
-    title:    "Aryaman Residency",
+    imgs: [ar1],
+    title: "Aryaman Residency",
     location: "Vatva, Ahmedabad, Gujarat",
-    contact:  ["9313213944"],
+    contact: ["9313213944"],
     specs: [
       { label: "2 BHK Flats", sizes: "136 Sq.Yd" },
-      { label: "Shops",       sizes: "448 – 758 Sq.Ft" },
+      { label: "Shops", sizes: "448 – 758 Sq.Ft" },
     ],
     tag: "Residential",
   },
   {
-    imgs:     [tntc, tntc1],
-    title:    "The Nikol Trade Center",
+    imgs: [tntc],
+    title: "The Nikol Trade Center",
     location: "Nikol, Ahmedabad, Gujarat",
-    contact:  ["9313700464", "8485909112"],
+    contact: ["9313700464", "8485909112"],
     specs: [
       { label: "Shops", sizes: "216 – 3481 Sq.Ft" },
     ],
     tag: "Commercial",
   },
   {
-    imgs:     [h, h1],
-    title:    "Harmony 71",
+    imgs: [h,],
+    title: "Harmony 71",
     location: "Lambha, Ahmedabad, Gujarat ",
-    contact:  ["9925062394"],
+    contact: ["9925062394"],
     specs: [
       { label: "4 BHK Bungalows", sizes: "Plot 65.50–173 Sq.Yd · Build 165–203 Sq.Yd" },
     ],
@@ -215,12 +200,12 @@ function useInView(threshold = 0.1) {
 }
 
 /* ════════════════════════════════════════════
-   PROJECTS PAGE
+  PROJECTS PAGE
 ════════════════════════════════════════════ */
 function Projects() {
-  const [show, setShow]     = useState(false);
+  const [show, setShow] = useState(false);
   const [active, setActive] = useState<Filter>("All");
-  const grid                = useInView(0.05);
+  const grid = useInView(0.05);
 
   useEffect(() => {
     const t = setTimeout(() => setShow(true), 60);
@@ -230,8 +215,8 @@ function Projects() {
   const filtered = active === "All" ? projects : projects.filter((p) => p.tag === active);
 
   const fu = (d: number): React.CSSProperties => ({
-    opacity:    show ? 1 : 0,
-    transform:  show ? "translateY(0)" : "translateY(16px)",
+    opacity: show ? 1 : 0,
+    transform: show ? "translateY(0)" : "translateY(16px)",
     transition: `opacity 0.5s ${d}s ease, transform 0.5s ${d}s ease`,
   });
 
@@ -247,14 +232,14 @@ function Projects() {
             <div
               className="hidden sm:flex"
               style={{
-                flexDirection:   "column",
-                alignItems:      "center",
-                justifyContent:  "center",
-                flexShrink:      0,
-                width:           148,
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+                width: 148,
                 backgroundColor: C.dark,
-                padding:         "32px 20px",
-                gap:             12,
+                padding: "32px 20px",
+                gap: 12,
                 ...fu(0),
               }}
             >
@@ -332,18 +317,18 @@ function Projects() {
 }
 
 /* ════════════════════════════════════════════
-   PROJECT CARD — image slider + specs + contact
+  PROJECT CARD — image slider + specs + contact
 ════════════════════════════════════════════ */
 function ProjectCard({
   project: p,
-  index:   i,
+  index: i,
   visible,
 }: {
   project: Project;
-  index:   number;
+  index: number;
   visible: boolean;
 }) {
-  const [hovered, setHovered]     = useState(false);
+  const [hovered, setHovered] = useState(false);
   const [activeImg, setActiveImg] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [direction, setDirection] = useState<"left" | "right">("right");
@@ -375,16 +360,16 @@ function ProjectCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        position:        "relative",
+        position: "relative",
         backgroundColor: "#fff",
-        border:          `1px solid ${hovered ? C.gold : C.bdr}`,
-        borderRadius:    8,
-        overflow:        "hidden",
-        opacity:         visible ? 1 : 0,
-        transform:       visible ? "translateY(0)" : "translateY(32px)",
-        transition:      `opacity 0.55s ${i * 0.08}s ease, transform 0.55s ${i * 0.08}s ease, border-color 0.25s ease`,
-        display:         "flex",
-        flexDirection:   "column",
+        border: `1px solid ${hovered ? C.gold : C.bdr}`,
+        borderRadius: 8,
+        overflow: "hidden",
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(32px)",
+        transition: `opacity 0.55s ${i * 0.08}s ease, transform 0.55s ${i * 0.08}s ease, border-color 0.25s ease`,
+        display: "flex",
+        flexDirection: "column",
       }}
     >
 
@@ -400,12 +385,12 @@ function ProjectCard({
               alt={`${p.title} ${idx + 1}`}
               loading="lazy"
               style={{
-                position:   "absolute",
-                inset:      0,
-                width:      "100%",
-                height:     "100%",
-                objectFit:  "cover",
-                transform:  isCurrent
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                transform: isCurrent
                   ? animating
                     ? direction === "right" ? "translateX(-100%)" : "translateX(100%)"
                     : "translateX(0%)"
@@ -413,7 +398,7 @@ function ProjectCard({
                     ? "translateX(100%)"
                     : "translateX(-100%)",
                 transition: "transform 0.38s cubic-bezier(0.4,0,0.2,1)",
-                zIndex:     isCurrent ? 1 : 0,
+                zIndex: isCurrent ? 1 : 0,
               }}
             />
           );
@@ -504,40 +489,40 @@ function ProjectCard({
         {/* specs table */}
         <div
           style={{
-            marginTop:    12,
-            borderTop:    `1px solid ${C.bdr}`,
-            paddingTop:   10,
-            display:      "flex",
-            flexDirection:"column",
-            gap:          6,
-            flex:         1,
+            marginTop: 12,
+            borderTop: `1px solid ${C.bdr}`,
+            paddingTop: 10,
+            display: "flex",
+            flexDirection: "column",
+            gap: 6,
+            flex: 1,
           }}
         >
           {p.specs.map((s, si) => (
             <div
               key={si}
               style={{
-                display:         "flex",
-                alignItems:      "flex-start",
-                justifyContent:  "space-between",
-                gap:             8,
-                fontSize:        10,
+                display: "flex",
+                alignItems: "flex-start",
+                justifyContent: "space-between",
+                gap: 8,
+                fontSize: 10,
               }}
             >
               {/* label chip */}
               <span
                 style={{
-                  flexShrink:      0,
+                  flexShrink: 0,
                   backgroundColor: C.cream,
-                  border:          `1px solid ${C.bdr}`,
-                  borderRadius:    4,
-                  padding:         "2px 8px",
-                  color:           C.dark,
-                  fontWeight:      600,
-                  letterSpacing:   "0.03em",
-                  display:         "flex",
-                  alignItems:      "center",
-                  gap:             4,
+                  border: `1px solid ${C.bdr}`,
+                  borderRadius: 4,
+                  padding: "2px 8px",
+                  color: C.dark,
+                  fontWeight: 600,
+                  letterSpacing: "0.03em",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 4,
                 }}
               >
                 <Bed style={{ width: 10, height: 10, color: C.gold }} />
@@ -546,10 +531,10 @@ function ProjectCard({
               {/* sizes */}
               <span
                 style={{
-                  color:      C.muted,
-                  textAlign:  "right",
+                  color: C.muted,
+                  textAlign: "right",
                   lineHeight: 1.55,
-                  fontSize:   10,
+                  fontSize: 10,
                 }}
               >
                 {s.sizes}
@@ -561,10 +546,10 @@ function ProjectCard({
         {/* contact + CTA */}
         <div
           style={{
-            marginTop:  14,
+            marginTop: 14,
             paddingTop: 12,
-            borderTop:  `1px solid ${C.bdr}`,
-            display:    "flex",
+            borderTop: `1px solid ${C.bdr}`,
+            display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             gap: 8,
@@ -577,15 +562,15 @@ function ProjectCard({
                 key={ni}
                 href={`tel:${num}`}
                 style={{
-                  display:        "flex",
-                  alignItems:     "center",
-                  gap:            5,
-                  fontSize:       10,
-                  color:          C.muted,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 5,
+                  fontSize: 10,
+                  color: C.muted,
                   textDecoration: "none",
-                  fontWeight:     500,
-                  letterSpacing:  "0.04em",
-                  transition:     "color 0.2s ease",
+                  fontWeight: 500,
+                  letterSpacing: "0.04em",
+                  transition: "color 0.2s ease",
                 }}
                 onMouseEnter={e => (e.currentTarget.style.color = C.gold)}
                 onMouseLeave={e => (e.currentTarget.style.color = C.muted)}
@@ -600,31 +585,31 @@ function ProjectCard({
           <Link
             to="/contact"
             style={{
-              display:        "flex",
-              alignItems:     "center",
-              gap:            6,
-              fontSize:       9,
-              letterSpacing:  "0.18em",
-              textTransform:  "uppercase",
-              fontWeight:     600,
-              color:          C.gold,
+              display: "flex",
+              alignItems: "center",
+              gap: 6,
+              fontSize: 9,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              fontWeight: 600,
+              color: C.gold,
               textDecoration: "none",
-              flexShrink:     0,
+              flexShrink: 0,
             }}
           >
             Enquire
             <span
               style={{
-                display:         "flex",
-                alignItems:      "center",
-                justifyContent:  "center",
-                width:           24,
-                height:          24,
-                borderRadius:    "50%",
-                border:          `1px solid ${C.gold}`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                width: 24,
+                height: 24,
+                borderRadius: "50%",
+                border: `1px solid ${C.gold}`,
                 backgroundColor: hovered ? C.gold : "transparent",
-                color:           hovered ? "#fff" : C.gold,
-                transition:      "all 0.22s ease",
+                color: hovered ? "#fff" : C.gold,
+                transition: "all 0.22s ease",
               }}
             >
               <ArrowUpRight style={{ width: 10, height: 10 }} />
@@ -636,13 +621,13 @@ function ProjectCard({
       {/* bottom sweep bar */}
       <div
         style={{
-          position:        "absolute",
-          bottom:          0,
-          left:            0,
-          height:          2,
-          width:           hovered ? "100%" : "0%",
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          height: 2,
+          width: hovered ? "100%" : "0%",
           backgroundColor: C.gold,
-          transition:      "width 0.42s ease",
+          transition: "width 0.42s ease",
         }}
       />
     </article>

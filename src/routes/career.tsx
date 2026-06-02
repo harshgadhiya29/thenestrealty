@@ -725,7 +725,7 @@ function Career() {
         marginTop: "2rem",
       }}
     >
-      <button
+      {/* <button
         style={{
           background: "#fff",
           border: "1px solid #e4d6bf",
@@ -739,7 +739,7 @@ function Career() {
         }}
       >
         View All Openings →
-      </button>
+      </button> */}
     </div>
   </div>
 </section>

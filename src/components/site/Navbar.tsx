@@ -11,7 +11,7 @@ const links = [
   { to: "/services", label: "Services" },
   // { to: "/faqs", label: "FAQs" },
   { to: "/career", label: "Career" },
-  { to: "/blogs", label: "Blogs" },
+  { to: "/campaigns", label: "campaigns" },
   { to: "/contact", label: "Contact Us" },
 ] as const;
 
@@ -31,9 +31,8 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur shadow-soft" : "bg-background"
-      }`}
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur shadow-soft" : "bg-background"
+        }`}
     >
       <div className="container-x flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-2">
