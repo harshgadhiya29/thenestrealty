@@ -8,6 +8,7 @@ import meet from "@/assets/meet.png";
 import karan from "@/assets/karan.png";
 import type { LucideIcon } from "lucide-react";
 
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
