@@ -3,9 +3,9 @@ import { PageLayout } from "@/components/site/PageLayout";
 import { ContactSection } from "./index";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, BarChart3, ChevronDown, Clock3, Mail, MapPin, Phone, ShieldCheck, Target, Users } from "lucide-react";
-import contactus from "@/assets/contactus.png";
-import contact2 from "@/assets/contact2.png";
-import contact3 from "@/assets/contact3.png";
+const contactus = "/assets/contactus.png";
+const contact2 = "/assets/contact2.png";
+const contact3 = "/assets/contact3.png";
 
 
 

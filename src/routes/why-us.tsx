@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Award, BookOpen, Users, ShieldCheck, Sparkles, Globe2, Clock, ThumbsUp, Headphones, Trophy, MapPinned, Megaphone, Home, Building2 } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
-import whyus from "@/assets/why-us.png";
-import whycta from "@/assets/whycta.png";
+const whyus = "/assets/why-us.png";
+const whycta = "/assets/whycta.png";
 
 
 export const Route = createFileRoute("/why-us")({

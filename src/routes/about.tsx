@@ -3,9 +3,9 @@ import { ArrowRight, Target, Eye, Heart, MapPin, Users, Award, TrendingUp, Linke
 import { useEffect, useRef, useState } from "react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { SectionHeader } from "@/components/site/Section";
-import aboutImg1 from "@/assets/about.png";
-import meet from "@/assets/meet.jpeg";
-import karan from "@/assets/karan.png";
+const aboutImg1 = "/assets/about.png";
+const meet = "/assets/meet.jpeg";
+const karan = "/assets/karan.png";
 import type { LucideIcon } from "lucide-react";
 
 

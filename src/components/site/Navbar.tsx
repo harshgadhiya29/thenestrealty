@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/TNR.png";
+const logo = "/assets/TNR.png";
 
 const links = [
   { to: "/", label: "Home" },

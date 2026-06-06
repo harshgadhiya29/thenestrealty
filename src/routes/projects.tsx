@@ -2,33 +2,33 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Bed, Maximize, MapPin, ArrowUpRight, ChevronLeft, ChevronRight, Phone, X, FileText, User, Mail, CheckCircle } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
-import ki from "@/assets/ki.jpg";
+const ki = "/assets/ki.jpg";
+const a1 = "/assets/Aqua1.jpg";
+const ar1 = "/assets/ar1.jpg";
+const aa1 = "/assets/ayodhyapuri.jpg";
+const h = "/assets/harmony.jpg";
+const kv = "/assets/kv.jpeg";
+const ak = "/assets/ak.jpg";
+const ph = "/assets/ph.jpg";
+const rh = "/assets/rh.jpg";
+const s = "/assets/s.jpg";
+const tntc = "/assets/tntc.jpeg";
+const k = "/assets/k.jpg";
 
-import a1 from "@/assets/Aqua1.jpg";
-import ar1 from "@/assets/ar1.jpg";
-import aa1 from "@/assets/AYODHYAPURI.jpg";
-import h from "@/assets/harmony.jpg";
-import kv from "@/assets/kv.jpeg";
-import ak from "@/assets/ak.jpg";
-import ph from "@/assets/ph.jpg";
-import rh from "@/assets/rh.jpg";
-import s from "@/assets/s.jpg";
-import tntc from "@/assets/tntc.jpeg";
-import k from "@/assets/k.jpg";
+// ── Brochure PDF static paths ──
+const tntcBrochure = "/assets/brochures/tntc.pdf";
+const akBrochure = "/assets/brochures/kalptruve.pdf";
+const arBrochure = "/assets/brochures/residency.pdf";
+const aaBrochure = "/assets/brochures/ayodhyapri.pdf";
+const kishBrochure = "/assets/brochures/kishkindha.pdf";
+const rhBrochure = "/assets/brochures/radheshyam.pdf";
+const keystoneBrochure = "/assets/brochures/keystone30.pdf";
+const aquaBrochure = "/assets/brochures/amritbrochure.pdf";
+const prarthanaBrochure = "/assets/brochures/parthna.pdf";
+const kahanBrochure = "/assets/brochures/kahanvill.pdf";
+const harmonyBrochure = "/assets/brochures/harmony71.pdf";
+const sahityaBrochure = "/assets/brochures/sahitya.pdf";
 
-// ── Brochure PDF imports ──
-import tntcBrochure from "@/assets/brochures/tntc.pdf";
-import akBrochure from "@/assets/brochures/kalptruve.pdf";
-import arBrochure from "@/assets/brochures/residency.pdf";
-import aaBrochure from "@/assets/brochures/ayodhyapri.pdf";
-import kishBrochure from "@/assets/brochures/kishkindha.pdf";
-import rhBrochure from "@/assets/brochures/radheshyam.pdf";
-import keystoneBrochure from "@/assets/brochures/keystone30.pdf";
-import aquaBrochure from "@/assets/brochures/amritbrochure.pdf";
-import prarthanaBrochure from "@/assets/brochures/parthna.pdf";
-import kahanBrochure from "@/assets/brochures/kahanvill.pdf";
-import harmonyBrochure from "@/assets/brochures/harmony71.pdf";
-import sahityaBrochure from "@/assets/brochures/sahitya.pdf";
 
 /* ─── Brand tokens ─── */
 const C = {

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Play, ArrowRight, ChevronLeft, ChevronRight, Users, Video, Heart, TrendingUp, Megaphone, MapPin } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
-import campainHero from "@/assets/campainehero.png";
+const campainHero = "/assets/campainehero.png";
 
 export const Route = createFileRoute("/campaigns")({
   head: () => ({

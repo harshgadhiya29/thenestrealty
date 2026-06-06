@@ -6,8 +6,8 @@ import {
 } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
-import serviceHero from "@/assets/service-hero.png";
-import servicecta from "@/assets/servicecat.png";
+const serviceHero = "/assets/service-hero.png";
+const servicecta = "/assets/servicecat.png";
 
 export const Route = createFileRoute("/services")({
   head: () => ({

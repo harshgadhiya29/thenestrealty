@@ -13,13 +13,13 @@ import {
 import { useState, useEffect, useRef } from "react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { SectionHeader } from "@/components/site/Section";
-import heroImg from "@/assets/hero-image.png";
-import aboutImg from "@/assets/hero-about.jpeg";
-import p1 from "@/assets/kishakidha.jpg";
-import p2 from "@/assets/AYODHYAPURI.jpg";
-import p3 from "@/assets/harmony.jpg";
-import p4 from "@/assets/RadheShyam.jpeg";
-import about2 from "@/assets/about-hero.png";
+const heroImg = "/assets/hero-image.png";
+const aboutImg = "/assets/hero-about.jpeg";
+const p1 = "/assets/kishakidha.jpg";
+const p2 = "/assets/ayodhyapuri.jpg";
+const p3 = "/assets/harmony.jpg";
+const p4 = "/assets/radheShyam.jpeg";
+const about2 = "/assets/about-hero.png";
 
 
 export const Route = createFileRoute("/")({

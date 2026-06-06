@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, BriefcaseBusiness, Building2, Clock3, Mail, MapPinned, Megaphone, Users } from "lucide-react";
 import { PageLayout } from "@/components/site/PageLayout";
 import { useEffect, useRef, useState } from "react";
-import career from "@/assets/career.png";
-import career2 from "@/assets/career2.png";
+const career = "/assets/career.png";
+const career2 = "/assets/career2.png";
 
 import {
   CalendarDays,
