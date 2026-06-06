@@ -331,7 +331,7 @@ function HomePage() {
                 { n: 1100, s: "+", l: "Happy Families", icon: Home },
                 { n: 950, s: "+", l: "Properties Closed", icon: Building2 },
                 { n: 11, s: "+", l: "Years of Trust", icon: ShieldCheck },
-                { n: 12, s: "+", l: "Listings Properties", icon: BadgeCheck },
+                { n: 12, s: "+", l: "Listings Projects", icon: BadgeCheck },
               ].map(({ n, s, l, icon: Icon }, i) => (
                 <Reveal key={l} delay={i * 100} direction="up">
                   <div
@@ -402,7 +402,7 @@ function HomePage() {
                 <h3
                   className="text-primary"
                   style={{
-                    fontFamily: "'Great Vibes', cursive",
+                    fontFamily: "  serif",
                     fontSize: "2.4rem",
                     fontWeight: 500,
                     lineHeight: 1,
@@ -666,7 +666,7 @@ export function ContactSection() {
             <div className="mt-6 sm:mt-8 space-y-3 text-sm text-white/80">
               {[
                 ["📍", "509,Hilltown Impressa, Opp.Parikh Hospital, Nikol, Ahmedabad, India 380049"],
-                ["📞", "+91  9925004858"],
+                ["📞", "+91  9925004160"],
                 ["✉️", "info@thenestrealty@gmail.com"],
               ].map(([icon, text], i) => (
                 <div

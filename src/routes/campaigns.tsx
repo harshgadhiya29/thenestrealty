@@ -21,12 +21,11 @@ const campaigns = [
   {
     number: "01",
     eyebrow: "TNTC CAMPAIGN",
-    title: "Bruthi toh\nAhiya Vase Che.",
+    title: "Vruthi toh\nAhiya Vase Che.",
     description: "A heartfelt campaign that celebrates living close to nature with modern comforts and thoughtful spaces.",
-    reels: "4–5 Reels",
+    reels: "6 Reels",
     type: "Concept Campaign",
     theme: "light",
-    // ✅ FIXED: playlistId and playlistUrl now match correctly
     playlistId: "PLzjqr-vXhLMGsxPcvputEas6ewApWbvJm",
     playlistUrl: "https://www.youtube.com/playlist?list=PLzjqr-vXhLMGsxPcvputEas6ewApWbvJm",
     color: "#C8973A",
@@ -36,20 +35,19 @@ const campaigns = [
     eyebrow: "AARYAMAN KALPRUKSH CAMPAIGN",
     title: "Maango\nTe Made.",
     description: "A promise of thoughtful living, crafted for a better tomorrow and a life full of possibilities.",
-    reels: "4–8 Reels",
+    reels: "5 Reels",
     type: "Concept Campaign",
     theme: "light",
-    // ✅ FIXED: playlistId and playlistUrl now match correctly
     playlistId: "PLzjqr-vXhLMHX91qE8y4DE1fN_WJqcRtW",
     playlistUrl: "https://www.youtube.com/playlist?list=PLzjqr-vXhLMHX91qE8y4DE1fN_WJqcRtW",
     color: "#C8973A",
   },
   {
     number: "03",
-    eyebrow: "NORTON CHANNEL PARTNER MEET",
-    title: "Norton\nChannel Partner Meet.",
+    eyebrow: " CHANNEL PARTNER MEET",
+    title: "Channel\n Partner Meet.",
     description: "A successful meet that brought together our valuable channel partners to align, connect and grow.",
-    reels: "3–4 Reels",
+    reels: "6 Reels",
     type: "Channel Partner Meet",
     theme: "dark",
     playlistId: "PLzjqr-vXhLMG6GZFlx3Tzz9fG6n2OUozK",
@@ -61,7 +59,7 @@ const campaigns = [
     eyebrow: "ANNUAL EXCELLENCE AWARD",
     title: "Annual\nExcellence Award.",
     description: "Celebrating achievements, recognizing hard work and inspiring excellence across our team.",
-    reels: "6–7 Reels",
+    reels: "6 Reels",
     type: "Team Celebration",
     theme: "light",
     playlistId: "PLzjqr-vXhLMFkflVHW5la8OXGVER0yk3m",
@@ -71,10 +69,10 @@ const campaigns = [
 ];
 
 const heroStats = [
-  { icon: Megaphone, value: "25+", label: "Campaigns", sub: "active projects" },
-  { icon: Video, value: "120+", label: "Reels Created", sub: "across platforms" },
-  { icon: Users, value: "50+", label: "Channel Partners", sub: "nationwide" },
-  { icon: MapPin, value: "15+", label: "Cities Covered", sub: "and growing" },
+  { icon: Megaphone, value: "50000+", label: "Qualified Leads Generated", sub: "active projects" },
+  { icon: Video, value: "100+", label: "Campaign Reels Created", sub: "across platforms" },
+  { icon: Users, value: "5M+", label: "Reel Views Generated", sub: "nationwide" },
+  { icon: MapPin, value: "20M+", label: "Audience Reach", sub: "and growing" },
 ];
 
 const bottomStats = [
@@ -156,7 +154,6 @@ function PlaylistStrip({
       </button>
       <div ref={scrollRef} className="strip-scroll flex gap-3 overflow-x-auto">
         {tiles.map((i) => (
-
           <a key={i}
             href={playlistUrl}
             target="_blank"
@@ -207,10 +204,7 @@ function CampaignRow({ c, index }: { c: typeof campaigns[0]; index: number }) {
         <div className="campaign-body">
           <span className="campaign-number">{c.number}</span>
           <span className="campaign-eyebrow">{c.eyebrow}</span>
-
-          {/* ✅ FIXED: use white-space pre-line so \n renders as line break */}
           <h2 className="campaign-title font-display">{c.title}</h2>
-
           <p className="campaign-desc">{c.description}</p>
 
           <div className="campaign-meta">
@@ -227,7 +221,7 @@ function CampaignRow({ c, index }: { c: typeof campaigns[0]; index: number }) {
             </span>
           </div>
 
-
+          {/* Watch button — stays as-is, just centered via parent flex align-items:center */}
           <a href={c.playlistUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -273,18 +267,14 @@ function Campaigns() {
         />
 
         <div className="container-x relative z-10 pt-28 pb-0 md:pt-36">
-          <div className="hero-eyebrow flex items-center gap-3 mb-6">
-            <span className="block h-px w-10 bg-primary" />
-            <span className="text-xs tracking-[0.25em] uppercase text-primary font-semibold">
-              Campaign Showcase
-            </span>
-          </div>
+          {/* Brand eyebrow — matches reference image style */}
+          {/* <p className="hero-brand-eyebrow">The Nest Realty · Est. 2018</p> */}
+
           <div className="max-w-2xl">
             <h1 className="hero-h1 font-display">
-              <span className="block">Campaigns</span>
-              <span className="block">
-                That <em className="camp-accent">Create Impact.</em>
-              </span>
+              <span className="block hero-h3-line1"> Campaign </span>
+              <span className="block text-primary hero-h3-line2">Showcase</span>
+              <span className="block hero-h1-brand font-display">Create Impact</span>
             </h1>
             <p className="hero-sub mt-5 max-w-md text-muted-foreground text-base leading-relaxed">
               Creative real estate campaigns that connect people with projects and deliver real results.
@@ -451,15 +441,44 @@ function Campaigns() {
             rgba(0,0,0,0.55) 28%, black 48%
           );
         }
+
+        /* ── Brand eyebrow: "The Nest Realty · Est. 2018" ── */
+        .hero-brand-eyebrow {
+          font-size: 0.65rem;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: hsl(var(--primary));
+          font-weight: 600;
+          margin-bottom: 1rem;
+          opacity: 0;
+          animation: fadeInUp 0.55s 0.05s ease both;
+        }
+
+        /* ── Hero headline — reference image style ── */
         .hero-h1 {
           font-size: clamp(2.8rem, 5.5vw, 5.2rem);
-          font-weight: 700; line-height: 1.0; letter-spacing: -0.02em;
+          font-weight: 400;
+          line-height: 1.0;
+          letter-spacing: -0.02em;
           color: hsl(var(--foreground));
+          opacity: 0;
+          animation: fadeInUp 0.75s 0.15s ease both;
         }
-        .camp-accent { color: hsl(var(--primary)); font-style: italic; }
-        .hero-eyebrow { opacity: 0; animation: fadeInUp 0.55s 0.05s ease both; }
-        .hero-h1      { opacity: 0; animation: fadeInUp 0.75s 0.15s ease both; }
-        .hero-sub     { opacity: 0; animation: fadeInUp 0.55s 0.30s ease both; }
+        /* "Why Developers" and "Choose" — dark, normal weight */
+        .hero-h1-line1,
+        .hero-h1-line2 {
+          color: hsl(var(--foreground));
+          font-style: normal;
+          font-weight: 700;
+        }
+        /* "The Nest Realty" — primary gold, italic serif like reference */
+        .hero-h1-brand {
+          color: hsl(var(--primary));
+          font-style: italic;
+          font-weight: 400;
+        }
+
+        .hero-sub { opacity: 0; animation: fadeInUp 0.55s 0.30s ease both; }
 
         /* ══ CAMPAIGN ROWS ══ */
         .campaign-row { border-bottom: 1px solid hsl(var(--border)); }
@@ -468,14 +487,12 @@ function Campaigns() {
         .campaign-bg-cool { background: hsl(210 30% 96%); }
         .campaign-bg-sage { background: hsl(150 20% 96%); }
         .campaign-dark    { background: hsl(220 22% 11%); color: #fff; }
-
-        /* ✅ FIXED: equal 50/50 grid so text has full half width */
-        .campaign-inner {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          align-items: stretch;
-          min-height: 360px;
-        }
+.campaign-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  /* min-height: 360px; ← DELETE karo */
+}
         .campaign-reversed {
           grid-template-columns: 1fr 1fr;
         }
@@ -489,17 +506,19 @@ function Campaigns() {
           .campaign-reversed .campaign-media { order: unset; }
         }
 
-        /* ✅ FIXED: proper centering with justify-content center */
-        .campaign-body {
-          padding: 3rem 3rem 3rem 3.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          height: 100%;
-          border-right: 1px solid hsl(var(--border));
-          box-sizing: border-box;
-        }
+        /* ── Campaign body: content centered, button also centered ── */
+     .campaign-body {
+  padding: 2rem 3rem 2rem 3.5rem;  /* ← padding ochhi karo */
+  min-height: unset;               /* ← koi min-height nahi */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-right: 1px solid hsl(var(--border));
+  box-sizing: border-box;
+}
+
         .campaign-reversed .campaign-body {
           padding: 3rem 3.5rem 3rem 3rem;
           border-right: none;
@@ -525,7 +544,6 @@ function Campaigns() {
         }
         .campaign-dark .campaign-eyebrow { color: #b9a0f4; }
 
-        /* ✅ FIXED: white-space pre-line makes \n render as actual line break */
         .campaign-title {
           font-size: clamp(1.9rem, 2.8vw, 2.8rem);
           font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
@@ -539,14 +557,15 @@ function Campaigns() {
           font-size: 0.83rem; line-height: 1.7;
           color: hsl(var(--muted-foreground));
           margin-bottom: 1.25rem;
-          max-width: 440px;
+          max-width: 400px;
+          text-align: center;
         }
         .campaign-dark .campaign-desc { color: hsl(220 10% 65%); }
 
-        /* Meta row — bordered box with two columns */
+        /* Meta row — centered */
         .campaign-meta {
           display: flex; align-items: stretch;
-          margin-bottom: 1.5rem; width: fit-content;
+          margin-bottom: 1.5rem;
           border: 1px solid hsl(var(--border));
           border-radius: 8px; overflow: hidden;
           padding: 0.55rem 0;
@@ -559,6 +578,7 @@ function Campaigns() {
         .meta-item {
           display: flex; flex-direction: column; gap: 3px;
           padding: 0 1.25rem;
+          align-items: center;
         }
         .meta-icon { width: 13px; height: 13px; color: hsl(var(--muted-foreground)); margin-bottom: 1px; }
         .meta-label {
@@ -579,7 +599,7 @@ function Campaigns() {
         .campaign-bg-cool .meta-divider { background: hsl(210 15% 84%); }
         .campaign-bg-sage .meta-divider { background: hsl(150 15% 84%); }
 
-        /* Watch button */
+        /* Watch button — pill shape, centered by parent flex align-items:center */
         .watch-btn {
           display: inline-flex; align-items: center; gap: 0.55rem;
           border: 1.5px solid var(--btn-color, hsl(var(--primary)));
@@ -588,7 +608,7 @@ function Campaigns() {
           font-size: 0.78rem; font-weight: 600;
           padding: 0.4rem 0.4rem 0.4rem 1.1rem;
           border-radius: 999px;
-          text-decoration: none; width: fit-content;
+          text-decoration: none;
           transition: background 0.2s, color 0.2s;
         }
         .watch-btn:hover {
@@ -602,10 +622,12 @@ function Campaigns() {
         .watch-btn:hover .watch-btn-icon { background: rgba(255,255,255,0.2) !important; }
 
         /* Media side */
-        .campaign-media {
-          padding: 2rem 2.5rem 2rem 2rem;
-          display: flex; align-items: center; overflow: hidden;
-        }
+     .campaign-media {
+  padding: 1.5rem 2rem;   /* ← upar-niche 1.5rem j */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
         .campaign-reversed .campaign-media {
           padding: 2rem 2rem 2rem 2.5rem;
         }
@@ -630,7 +652,8 @@ function Campaigns() {
 
         .strip-tile { cursor: pointer; text-decoration: none; }
         .strip-thumb {
-          width: 168px; height: 235px;
+           width: 168px;
+  height: 235px;   
           border-radius: 12px; overflow: hidden; position: relative;
           background: hsl(var(--muted)); border: 1px solid hsl(var(--border));
           flex-shrink: 0;

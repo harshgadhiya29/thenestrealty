@@ -119,7 +119,7 @@ const stats: StatItem[] = [
   { icon: Award, n: 11, s: "+", label: "Years", sub: "of experience" },
   { icon: Users, n: 1100, s: "+", label: "Families", sub: "served across Gujarat" },
   { icon: TrendingUp, n: 950, s: "+", label: "Deals", sub: "closed successfully" },
-  { icon: MapPin, n: 12, s: "+", label: "Listings", sub: "active properties" },
+  { icon: MapPin, n: 12, s: "+", label: "Listings", sub: "active Project" },
   { icon: Eye, n: 12000, s: "+", label: "Visits", sub: "Site Visits Generated" },
 ];
 
@@ -146,7 +146,7 @@ const values: ValueCard[] = [
 
 const directors: Director[] = [
   {
-    name: "Jaydip Sonraj",
+    name: "Jaydepp Sonraj",
     role: "Director",
     image: karan,
     desc: "He drives sales strategy, client relationships and operational excellence to deliver consistent results.",
@@ -158,7 +158,7 @@ const directors: Director[] = [
     },
   },
   {
-    name: "Ajay Sorathiya",
+    name: "Ajayy Sorathiya",
     role: "Director",
     image: meet,
     desc: "With deep market knowledge and a strategic mindset, he leads the vision, growth and partnerships at The Nest Realty.",
@@ -266,7 +266,7 @@ function AboutPage() {
 
               <p className="text-foreground text-lg font-semibold leading-relaxed mb-5" style={{ animation: "fadeUp 0.65s 0.55s ease both" }}>
                 The real-estate vertical of{" "}
-                <span className="text-primary">Swarnim Vasudha LLP</span>
+                <span className="text-primary uppercase">Swarnim Vasudha LLP</span>
                 , a Gujarat-based group with a long-standing reputation for ethics and execution.
               </p>
 

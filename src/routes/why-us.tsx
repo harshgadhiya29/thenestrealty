@@ -19,7 +19,7 @@ export const Route = createFileRoute("/why-us")({
 });
 
 const reasons = [
-  { icon: Award, title: "15+ Years of Experience", desc: "Decades of combined expertise across residential, commercial and land deals in Ahmedabad." },
+  { icon: Award, title: "11+ Years of Experience", desc: "Decades of combined expertise across residential, commercial and land deals in Ahmedabad." },
   { icon: BookOpen, title: "Deep Market Knowledge", desc: "Hyper-local insights on micro-markets, pricing trends and upcoming infrastructure." },
   { icon: Users, title: "Professional Team", desc: "RERA-aware advisors who treat every brief like their own." },
   { icon: ShieldCheck, title: "Transparent Deals", desc: "Honest pricing, clear paperwork, zero hidden surprises." },
@@ -145,7 +145,7 @@ function WhyUs() {
         {/* FLOATING STATS BAR */}
         <div className="container-x relative z-20 -mt-24 pb-10">
           <div className="rounded-[2rem] overflow-hidden border border-white/20 bg-white/90 backdrop-blur-xl shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-border">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 divide-x divide-border">
               {[
                 {
                   icon: Building2,
@@ -177,12 +177,7 @@ function WhyUs() {
                   label: "Site Visits",
                   sub: "Generated",
                 },
-                {
-                  icon: Trophy,
-                  value: "12+",
-                  label: "Listings",
-                  sub: "active properties",
-                },
+
               ].map(({ icon: Icon, value, label, sub }, i) => (
                 <div
                   key={label}
